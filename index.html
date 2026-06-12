@@ -1,25 +1,20 @@
-<!doctype html>
-<html lang="es">
+<!DOCTYPE html>
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lo Encontre | Objetos perdidos del campus</title>
     <link rel="stylesheet" href="css/style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Manrope:wght@400;500;600;700;800&display=swap"
-        rel="stylesheet">
 </head>
 
 <body>
-    <header class="site-header">
-        <a class="brand" href="index.html" aria-label="Lo Encontre inicio">
-            <img src="assets/logo-lo-encontre.svg" alt="Lo Encontre">
+    <header>
+        <a href="index.html" class="brand">
+            <img src="assets/images/logo.svg" alt="Lo encontre logo">
         </a>
 
-        <nav class="main-nav" aria-label="Navegacion principal">
+        <nav>
             <a class="active" href="index.html">Inicio</a>
             <a href="objetos.html">Objetos</a>
             <a href="reportar.html">Reportar</a>
@@ -27,90 +22,114 @@
     </header>
 
     <main>
-        <section class="hero-shell">
-            <div class="hero-copy">
-                <p class="eyebrow">Archivo comunitario del campus</p>
+        <!-- Hero -->
+        <section class="hero">
+            <div class="hero-text">
                 <h1>Las cosas perdidas tambien tienen ruta de regreso.</h1>
-                <p class="hero-lead">
-                    Una web sencilla para registrar hallazgos, revisar objetos y conectar a la persona correcta con lo
-                    que creia perdido.
-                </p>
-                <div class="action-row">
-                    <a class="button primary" href="objetos.html">Ver objetos</a>
-                    <a class="button secondary" href="reportar.html">Publicar reporte</a>
+                <p>Esta es una web para reportar y encontrar objetos perdidos del campus</p>
+
+                <div class="hero-text-buttons">
+                    <a href="objetos.html">Ver objetos</a>
+                    <a href="reportar.html">Publicar reporte</a>
                 </div>
             </div>
 
-            <figure class="hero-art">
-                <img src="assets/hero-found-objects.png" alt="Objetos encontrados organizados sobre una mesa">
-                <figcaption>Un tablero visual para reunir hallazgos y objetos perdidos del campus.</figcaption>
-            </figure>
-        </section>
-
-        <section class="ticker-band" aria-label="Resumen de actividad">
-            <article>
-                <strong>248</strong>
-                <span>reportes visibles</span>
-            </article>
-            <article>
-                <strong>117</strong>
-                <span>objetos encontrados</span>
-            </article>
-            <article>
-                <strong>82</strong>
-                <span>objetos perdidos</span>
-            </article>
-            <article>
-                <strong>49</strong>
-                <span>recuperados</span>
-            </article>
-        </section>
-
-        <section class="section-grid">
-            <div class="section-kicker">Como se siente</div>
-            <div>
-                <h2>Un tablero vivo, aunque no tenga base de datos.</h2>
-                <p>
-                    La pagina esta pensada como una vitrina clara para reportes del campus. Por ahora es estatica,
-                    pero queda lista para conectar datos cuando quieras darle vida con JavaScript.
-                </p>
+            <div class="hero-image">
+                <img src="assets/images/hero-found-objects.png"
+                    alt="Imagen de objetos encontrados organizados sobre una mesa">
             </div>
         </section>
 
-        <section class="feature-strip">
-            <article>
-                <span>01</span>
-                <h3>Publica</h3>
-                <p>Describe el objeto, el lugar, la fecha y una forma segura de contacto.</p>
-            </article>
-            <article>
-                <span>02</span>
-                <h3>Filtra</h3>
-                <p>Busca por categoria, estado o texto para encontrar coincidencias rapidamente.</p>
-            </article>
-            <article>
-                <span>03</span>
-                <h3>Resuelve</h3>
-                <p>Marca un reporte como recuperado cuando la historia termina bien.</p>
-            </article>
+        <!-- About -->
+        <section class="about">
+            <h2>¿Como funciona?</h2>
+
+            <div class="about-grid">
+                <article>
+                    <h3>1. Reporta</h3>
+                    <p>
+                        Si encontraste un objeto dentro del campus,
+                        publica una descripcion y una fotografia.
+                    </p>
+                </article>
+
+                <article>
+                    <h3>2. Busca</h3>
+                    <p>
+                        Explora los reportes recientes para verificar
+                        si alguien encontro tu pertenencia.
+                    </p>
+                </article>
+
+                <article>
+                    <h3>3. Recupera</h3>
+                    <p>
+                        Contacta al responsable del reporte y coordina
+                        la entrega del objeto.
+                    </p>
+                </article>
+            </div>
         </section>
 
-        <section class="split-callout">
-            <div>
-                <p class="eyebrow">Detalle humano</p>
-                <h2>No es solo una lista de objetos.</h2>
+        <!-- Estadisticas -->
+        <section class="stats">
+            <h2>La comunidad ayuda</h2>
+
+            <div class="stats-grid">
+                <article>
+                    <strong>150+</strong>
+                    <span>Objetos reportados</span>
+                </article>
+
+                <article>
+                    <strong>90+</strong>
+                    <span>Objetos recuperados</span>
+                </article>
+
+                <article>
+                    <strong>300+</strong>
+                    <span>Usuarios registrados</span>
+                </article>
             </div>
+        </section>
+
+        <!-- CTA -->
+        <section class="cta">
+            <h2>¿Perdiste algo recientemente?</h2>
             <p>
-                Es una pequena memoria del campus: una botella olvidada despues de clase, unas llaves que detienen todo
-                el dia, un cuaderno lleno de apuntes antes de un examen. La interfaz intenta tratar esos reportes con
-                cuidado, orden y un poco de caracter.
+                Revisa los reportes disponibles o crea una publicación
+                para aumentar las posibilidades de recuperarlo.
             </p>
+
+            <a href="reportar.html">Crear reporte</a>
         </section>
     </main>
 
-    <footer class="site-footer">
-        <strong>Lo Encontre</strong>
-        <span>Hecho para recuperar historias, no solo cosas.</span>
+    <footer>
+        <div class="footer-brand">
+            <img src="assets/images/logo.svg" alt="Lo encontre logo">
+            <p>Plataforma para objetos perdidos y encontrados dentro del campus.</p>
+        </div>
+
+        <div class="footer-links">
+            <h3>Navegacion</h3>
+
+            <a href="index.html">Inicio</a>
+            <a href="objetos.html">Objetos</a>
+            <a href="reportar.html">Reportar</a>
+        </div>
+
+        <div class="footer-contact">
+            <h3>Contacto</h3>
+
+            <a href="mailto:contacto@loencontre.com">
+                contacto@loencontre.com
+            </a>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2026 Lo Encontre. Todos los derechos reservados.</p>
+        </div>
     </footer>
 </body>
 
