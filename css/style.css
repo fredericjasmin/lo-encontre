@@ -67,6 +67,16 @@ header {
     align-items: center;
     justify-content: space-between;
     gap: 24px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: linear-gradient(
+        to bottom,
+        rgba(245, 240, 232, .95),
+        rgba(245, 240, 232, .6),
+        transparent
+    );
+
 }
 
 .brand,
@@ -74,8 +84,6 @@ nav {
     display: flex;
     align-items: center;
 }
-
-
 
 .brand {
     width: 210px;
@@ -105,6 +113,8 @@ nav a:hover {
     background-color: var(--ink);
     color: var(--paper);
 }
+
+
 
 h1,
 h2 {
