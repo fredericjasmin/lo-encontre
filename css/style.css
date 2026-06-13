@@ -330,6 +330,131 @@ footer {
 
 @media (max-width: 370px) {
     .brand img {
-    width: 170px;
+        width: 170px;
+    }
 }
+
+
+/* Juego */
+
+.game {
+    padding: 120px 0;
+}
+
+.game-target {
+    margin-bottom: 24px;
+    font-size: 1.15rem;
+    font-weight: 700;
+}
+
+.game-scene {
+    position: relative;
+}
+
+.game-scene img {
+    width: 100%;
+    display: block;
+    border-radius: 8px;
+    border: 1px solid var(--line);
+}
+
+/* Zonas clicables */
+
+.hitbox {
+    position: absolute;
+
+    border: none;
+    background: transparent;
+
+    cursor: pointer;
+}
+
+/* Audifonos - colgados arriba derecha */
+.headphones {
+    top: 0%;
+    left: 81%;
+    width: 4.7%;
+    height: 8.1%;
+}
+
+/* Mochila - verde junto al velador */
+.backpack {
+    top: 17%;
+    left: 36%;
+    width: 11.5%;
+    height: 21.4%;
+}
+
+/* Laptop - sobre el escritorio */
+.laptop {
+    top: 31%;
+    left: 85%;
+    width: 13.8%;
+    height: 10.3%;
+}
+
+/* Zapatos - tenis en el piso */
+.shoes {
+    top: 38%;
+    left: 52%;
+    width: 10.3%;
+    height: 9.2%;
+}
+
+/* Skateboard - apoyado contra la pared */
+.skateboard {
+    top: 5%;
+    left: 49%;
+    width: 6.3%;
+    height: 31%;
+}
+
+/* Lampara de escritorio */
+.lamp {
+    top: 6%;
+    left: 84%;
+    width: 5.7%;
+    height: 19.5%;
+}
+
+/* Reloj despertador */
+.clock {
+    top: 21%;
+    left: 25%;
+    width: 3.8%;
+    height: 6.9%;
+}
+
+/* Botella de agua */
+.bottle {
+    top: 78%;
+    left: 25%;
+    width: 5.7%;
+    height: 20.6%;
+}
+
+/* Libros apilados (junto al banco) */
+.books {
+    top: 73%;
+    left: 53%;
+    width: 14.9%;
+    height: 17.2%;
+}
+
+/* Taza de cafe */
+.mug {
+    top: 19%;
+    left: 80%;
+    width: 4%;
+    height: 6.9%;
+}
+
+.hitbox {
+    outline: 2px solid red;
+}
+
+#game-message {
+    margin-top: 20px;
+    min-height: 32px;
+    font-weight: 700;
 }
