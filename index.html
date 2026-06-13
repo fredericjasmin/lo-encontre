@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lo Encontre | Objetos perdidos del campus</title>
     <link rel="stylesheet" href="css/style.css">
+    <link rel="shortcut icon" href="assets/images/favicon.ico" type="image/x-icon">
 </head>
 
 <body>
@@ -13,6 +14,12 @@
         <a href="index.html" class="brand">
             <img src="assets/images/logo.svg" alt="Lo encontre logo">
         </a>
+
+        <button class="menu-toggle" aria-label="Abrir menú">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
 
         <nav>
             <a class="active" href="index.html">Inicio</a>
@@ -26,11 +33,11 @@
         <section class="hero">
             <div class="hero-text">
                 <h1>Las cosas perdidas tambien tienen ruta de regreso.</h1>
-                <p>Esta es una web para reportar y encontrar objetos perdidos del campus</p>
+                <p>Esta es una web para reportar y encontrar objetos perdidos dentro del campus universitario.</p>
 
                 <div class="hero-text-buttons">
-                    <a href="objetos.html">Ver objetos</a>
-                    <a href="reportar.html">Publicar reporte</a>
+                    <a class="button primary" href="objetos.html">Ver objetos</a>
+                    <a class="button secondary" href="reportar.html">Publicar reporte</a>
                 </div>
             </div>
 
@@ -71,66 +78,17 @@
             </div>
         </section>
 
-        <!-- Estadisticas -->
-        <section class="stats">
-            <h2>La comunidad ayuda</h2>
-
-            <div class="stats-grid">
-                <article>
-                    <strong>150+</strong>
-                    <span>Objetos reportados</span>
-                </article>
-
-                <article>
-                    <strong>90+</strong>
-                    <span>Objetos recuperados</span>
-                </article>
-
-                <article>
-                    <strong>300+</strong>
-                    <span>Usuarios registrados</span>
-                </article>
-            </div>
-        </section>
-
-        <!-- CTA -->
-        <section class="cta">
-            <h2>¿Perdiste algo recientemente?</h2>
-            <p>
-                Revisa los reportes disponibles o crea una publicación
-                para aumentar las posibilidades de recuperarlo.
-            </p>
-
-            <a href="reportar.html">Crear reporte</a>
-        </section>
     </main>
 
     <footer>
         <div class="footer-brand">
             <img src="assets/images/logo.svg" alt="Lo encontre logo">
-            <p>Plataforma para objetos perdidos y encontrados dentro del campus.</p>
         </div>
-
-        <div class="footer-links">
-            <h3>Navegacion</h3>
-
-            <a href="index.html">Inicio</a>
-            <a href="objetos.html">Objetos</a>
-            <a href="reportar.html">Reportar</a>
-        </div>
-
-        <div class="footer-contact">
-            <h3>Contacto</h3>
-
-            <a href="mailto:contacto@loencontre.com">
-                contacto@loencontre.com
-            </a>
-        </div>
-
         <div class="footer-bottom">
             <p>&copy; 2026 Lo Encontre. Todos los derechos reservados.</p>
         </div>
     </footer>
+    <script src="js/script.js"></script>
 </body>
 
 </html>
