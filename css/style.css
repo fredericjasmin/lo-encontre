@@ -206,6 +206,7 @@ section:not(:last-child) {
 }
 
 .hero-image {
+    transform: rotate(1.8deg);
     width: clamp(300px, 40vw, 600px);
     height: clamp(300px, 40vw, 600px);
     flex-shrink: 0;
@@ -295,10 +296,6 @@ footer {
         display: none;
     }
 
-    header {
-        position: relative;
-    }
-
     nav.show {
         display: flex;
         flex-direction: column;
@@ -334,7 +331,6 @@ footer {
     }
 }
 
-
 /* Juego */
 
 .game {
@@ -342,9 +338,20 @@ footer {
 }
 
 .game-target {
-    margin-bottom: 24px;
-    font-size: 1.15rem;
+    margin-bottom: 30px;
+    font-size: 1.2rem;
     font-weight: 700;
+}
+
+.game-scene-wrapper {
+    width: min(100%, 1000px);
+    margin: 0 auto;
+    padding: 22px;
+    background: var(--white);
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    box-shadow: 0 10px 30px rgba(0,0,0,.08);
+    transform: rotate(-1.2deg);
 }
 
 .game-scene {
@@ -352,24 +359,40 @@ footer {
 }
 
 .game-scene img {
-    width: 100%;
     display: block;
-    border-radius: 8px;
-    border: 1px solid var(--line);
+    width: 100%;
+    border-radius: 4px;
 }
 
-/* Zonas clicables */
+.feedback {
+    position: absolute;
+    color: var(--white);
+    font-size: 1.8rem;
+    font-weight: 800;
+    pointer-events: none;
+    text-shadow:
+        0 2px 8px rgba(0, 0, 0, .45);
+    animation: fadeOut .8s ease forwards;
+}
+
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+    }
+
+    to {
+        opacity: 0;
+    }
+}
 
 .hitbox {
     position: absolute;
-
     border: none;
     background: transparent;
-
     cursor: pointer;
+    outline: 2px solid var(--coral);
 }
 
-/* Audifonos - colgados arriba derecha */
 .headphones {
     top: 0%;
     left: 81%;
@@ -377,7 +400,6 @@ footer {
     height: 8.1%;
 }
 
-/* Mochila - verde junto al velador */
 .backpack {
     top: 17%;
     left: 36%;
@@ -385,7 +407,6 @@ footer {
     height: 21.4%;
 }
 
-/* Laptop - sobre el escritorio */
 .laptop {
     top: 31%;
     left: 85%;
@@ -393,7 +414,6 @@ footer {
     height: 10.3%;
 }
 
-/* Zapatos - tenis en el piso */
 .shoes {
     top: 38%;
     left: 52%;
@@ -401,7 +421,6 @@ footer {
     height: 9.2%;
 }
 
-/* Skateboard - apoyado contra la pared */
 .skateboard {
     top: 5%;
     left: 49%;
@@ -409,7 +428,6 @@ footer {
     height: 31%;
 }
 
-/* Lampara de escritorio */
 .lamp {
     top: 6%;
     left: 84%;
@@ -417,7 +435,6 @@ footer {
     height: 19.5%;
 }
 
-/* Reloj despertador */
 .clock {
     top: 21%;
     left: 25%;
@@ -425,7 +442,6 @@ footer {
     height: 6.9%;
 }
 
-/* Botella de agua */
 .bottle {
     top: 78%;
     left: 25%;
@@ -433,7 +449,6 @@ footer {
     height: 20.6%;
 }
 
-/* Libros apilados (junto al banco) */
 .books {
     top: 73%;
     left: 53%;
@@ -441,20 +456,9 @@ footer {
     height: 17.2%;
 }
 
-/* Taza de cafe */
 .mug {
     top: 19%;
     left: 80%;
     width: 4%;
     height: 6.9%;
-}
-
-.hitbox {
-    outline: 2px solid red;
-}
-
-#game-message {
-    margin-top: 20px;
-    min-height: 32px;
-    font-weight: 700;
 }
