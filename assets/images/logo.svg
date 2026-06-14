@@ -1,14 +1,42 @@
 <svg width="210" height="56" viewBox="0 0 210 56" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
-  <title id="title">Lo Encontre</title>
-  <desc id="desc">Logo artistico de Lo Encontre con una etiqueta de objeto encontrado y una ruta curva.</desc>
+  <title id="title">Lo Encontré</title>
+  <desc id="desc">Logo artístico de Lo Encontré con una etiqueta de objeto encontrado y una ruta curva.</desc>
+
   <rect x="2" y="3" width="50" height="50" rx="11" fill="#161616"/>
+
   <path d="M17 14H37C39.7614 14 42 16.2386 42 19V37C42 39.7614 39.7614 42 37 42H17C14.2386 42 12 39.7614 12 37V19C12 16.2386 14.2386 14 17 14Z" fill="#FFF7EA"/>
+
   <path d="M18.5 21H28.5C32.6421 21 36 24.3579 36 28.5C36 32.6421 32.6421 36 28.5 36H18.5V21Z" fill="#1F6A4D"/>
+
   <path d="M23.5 21V36" stroke="#FFF7EA" stroke-width="3.5" stroke-linecap="round"/>
+
   <circle cx="32" cy="25.5" r="2.6" fill="#C84F3D"/>
+
   <path d="M36.5 32.5C40.4 32.5 41.5 29.5 41.5 27.4C41.5 22.7 35.4 21.2 32.5 24.7" stroke="#B98A2F" stroke-width="2.5" stroke-linecap="round"/>
+
   <path d="M45 14L49 10M47 18L52 18" stroke="#285D8F" stroke-width="2.4" stroke-linecap="round"/>
-  <text x="66" y="27" fill="#161616" font-family="Georgia, 'Times New Roman', serif" font-size="23" font-weight="700" letter-spacing=".2">Lo</text>
-  <text x="66" y="44" fill="#161616" font-family="Manrope, Arial, sans-serif" font-size="18" font-weight="800" letter-spacing=".4">Encontre</text>
+
+  <text
+    x="66"
+    y="27"
+    fill="#161616"
+    font-family="Georgia, 'Times New Roman', serif"
+    font-size="23"
+    font-weight="700"
+    letter-spacing=".2">
+    Lo
+  </text>
+
+  <text
+    x="66"
+    y="44"
+    fill="#161616"
+    font-family="Manrope, Arial, sans-serif"
+    font-size="18"
+    font-weight="800"
+    letter-spacing=".2">
+    Encontré
+  </text>
+
   <path d="M64 50C83 46 106 47.5 128 50C151 52.6 178 52.2 203 46.5" stroke="#C84F3D" stroke-width="2.6" stroke-linecap="round"/>
 </svg>
