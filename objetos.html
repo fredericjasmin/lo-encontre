@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lo Encontre | Objetos perdidos del campus</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="shortcut icon" href="assets/images/favicon.ico" type="image/x-icon">
+</head>
+
+<body>
+    <header>
+        <a href="index.html" class="brand">
+            <img src="assets/images/logo.svg" alt="Lo encontre logo">
+        </a>
+
+        <button class="menu-toggle" aria-label="Abrir menú">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+
+        <nav>
+            <a href="index.html">Inicio</a>
+            <a class="active" href="objetos.html">Objetos</a>
+            <a href="reportar.html">Reportar</a>
+        </nav>
+    </header>
+
+    <main>
+
+        <!-- Hero -->
+        <section class="objects">
+            <div class="objects-text">
+                <h1>Objetos reportados</h1>
+
+                <p>
+                    Explora los objetos perdidos y encontrados
+                    reportados por la comunidad universitaria.
+                </p>
+            </div>
+        </section>
+
+        <!-- Filtros -->
+        <section class="filters">
+
+            <input type="search" placeholder="Buscar objeto...">
+
+            <select>
+                <option>Todas las categorías</option>
+                <option>Electrónicos</option>
+                <option>Accesorios</option>
+                <option>Académico</option>
+                <option>Llaves</option>
+                <option>Otros</option>
+            </select>
+
+            <select>
+                <option>Todos los estados</option>
+                <option>Perdido</option>
+                <option>Encontrado</option>
+                <option>Recuperado</option>
+            </select>
+
+        </section>
+
+        <!-- Objetos -->
+        <section class="objects-grid">
+
+            <article class="object-card">
+
+                <div class="object-image">
+                    <img src="assets/images/object-headphones.jpg" alt="Audífonos negros">
+                </div>
+
+                <div class="object-content">
+
+                    <span class="object-status found">
+                        Encontrado
+                    </span>
+
+                    <h3>Audífonos negros</h3>
+
+                    <p>
+                        Encontrados en el laboratorio de computo.
+                    </p>
+
+                    <div class="object-meta">
+                        <span>Laboratorio A</span>
+                        <span>01 Jun 2026</span>
+                    </div>
+
+                </div>
+
+            </article>
+
+            <article class="object-card">
+
+                <div class="object-image">
+                    <img src="assets/images/object-notebook.jpg" alt="Cuaderno">
+                </div>
+
+                <div class="object-content">
+
+                    <span class="object-status lost">
+                        Perdido
+                    </span>
+
+                    <h3>Cuaderno de cálculo</h3>
+
+                    <p>
+                        Cuaderno con apuntes y separadores de colores.
+                    </p>
+
+                    <div class="object-meta">
+                        <span>Aula 204</span>
+                        <span>30 May 2026</span>
+                    </div>
+
+                </div>
+
+            </article>
+
+            <article class="object-card">
+
+                <div class="object-image">
+                    <img src="assets/images/object-keys.jpg" alt="Llaves">
+                </div>
+
+                <div class="object-content">
+
+                    <span class="object-status recovered">
+                        Recuperado
+                    </span>
+
+                    <h3>Llaves con cinta verde</h3>
+
+                    <p>
+                        Recuperadas por seguridad del campus.
+                    </p>
+
+                    <div class="object-meta">
+                        <span>Cafetería</span>
+                        <span>28 May 2026</span>
+                    </div>
+
+                </div>
+
+            </article>
+
+        </section>
+
+    </main>
+
+
+    <footer>
+        <div class="footer-brand">
+            <img src="assets/images/logo.svg" alt="Lo encontre logo">
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Lo Encontre. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+    <script src="js/script.js"></script>
+</body>
+
+</html>
