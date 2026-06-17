@@ -1,132 +1,202 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lo Encontré | Objetos perdidos del campus</title>
+    <meta name="description"
+        content="TechEvents CR es un sitio web informativo sobre eventos tecnológicos en Costa Rica.">
+    <meta name="keywords"
+        content="eventos tecnológicos, Costa Rica, programación, inteligencia artificial, ciberseguridad, desarrollo web">
+    <meta name="author" content="TechEvents CR">
+    <!-- CSS externo principal del sitio -->
     <link rel="stylesheet" href="css/style.css">
-    <link rel="shortcut icon" href="assets/images/favicon.ico" type="image/x-icon">
+    <title>TechEvents CR | Inicio</title>
 </head>
 
 <body>
-    <header>
-        <a href="index.html" class="brand">
-            <img src="assets/images/logo.svg" alt="Lo Encontré logo">
-        </a>
+    <!-- Encabezado principal fijo del sitio -->
+    <header class="site-header">
+        <div class="container header-content">
+            <p class="logo"><strong>TechEvents CR</strong></p>
 
-        <button class="menu-toggle" aria-label="Abrir menú">
-            <span></span>
-            <span></span>
-            <span></span>
-        </button>
+            <!-- *** Checkbox oculto para controlar el menú hamburguesa sin JavaScript -->
+            <input type="checkbox" id="menu-toggle" class="menu-toggle">
 
-        <nav>
-            <a class="active" href="index.html">Inicio</a>
-            <a href="objetos.html">Objetos</a>
-            <a href="reportar.html">Reportar</a>
-        </nav>
+            <!-- *** Botón visual del menú hamburguesa -->
+            <label for="menu-toggle" class="menu-button">
+                <span></span>
+                <span></span>
+                <span></span>
+            </label>
+
+            <!-- Navegación principal -->
+            <nav class="main-nav">
+                <ul>
+                    <li><a class="active-link" href="index.html">Inicio</a></li>
+                    <li><a href="eventos.html">Eventos</a></li>
+                    <li><a href="#sobre-plataforma">Sobre la plataforma</a></li>
+                    <li><a href="#contacto">Contacto</a></li>
+                    <li>
+                        <a href="https://developer.mozilla.org/es/docs/Web/HTML" target="_blank">
+                            MDN HTML
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
     </header>
-
+    <!-- Ubicacion actual -->
+    <nav class="breadcrumb" aria-label="Ubicación actual">
+        <div class="container">
+            <a href="index.html">Inicio</a>
+            <span>Inicio</span>
+        </div>
+    </nav>
+    <!-- Contenido principal -->
     <main>
-        <!-- Hero -->
-        <section class="hero">
-            <div class="hero-text">
-                <h1>Las cosas perdidas también tienen ruta de regreso.</h1>
+        <!-- Sección hero con columnas flotantes -->
+        <section id="hero" class="hero">
+            <div class="container hero-content">
+                <div class="hero-text">
+                    <span class="hero-badge">Comunidad tecnológica</span>
 
+                    <h1>Eventos tecnológicos en Costa Rica</h1>
+                    <p>
+                        Bienvenido a <strong>TechEvents CR</strong>, una plataforma informativa para conocer
+                        eventos relacionados con programación, inteligencia artificial, ciberseguridad
+                        y desarrollo web.
+                    </p>
+                    <!-- Mejora de jerarquia visual -->
+                    <div class="hero-actions">
+                        <a class="btn-primary" href="eventos.html">
+                            Ver eventos
+                        </a>
+
+                        <a class="btn-link" href="#sobre-plataforma">
+                            Conocer la plataforma
+                        </a>
+                    </div>
+
+                    <!-- Caja relativa que contiene un elemento absoluto -->
+                    <div class="hero-info">
+                        <span class="info-label">Nuevo</span>
+                        <p>
+                            <mark>Próximamente:</mark> registro de usuarios, detalle de eventos y gestión completa
+                            de inscripciones.
+                        </p>
+                        <button class="btn-secondary">
+                            Explorar plataforma
+                        </button>
+                    </div>
+                </div>
+
+
+                <figure class="hero-image">
+                    <img src="assets/images/hero-eventos.png" alt="Personas participando en un evento tecnológico">
+                    <figcaption>
+                        Comunidad tecnológica participando en actividades de aprendizaje.
+                    </figcaption>
+                </figure>
+
+            </div>
+        </section>
+
+        <!-- Información general de la plataforma -->
+        <section id="sobre-plataforma">
+            <div class="container">
+                <h2>Sobre la plataforma</h2>
                 <p>
-                    Esta es una web para reportar y encontrar objetos perdidos
-                    dentro del campus universitario.
+                    TechEvents CR busca centralizar información sobre actividades tecnológicas relevantes
+                    para estudiantes, docentes, profesionales y comunidades de innovación.
+                </p>
+                <h3>Beneficios principales</h3>
+                <div class="benefits-grid">
+                    <article class="benefit-card">
+                        <h4>Eventos organizados</h4>
+                        <p>Consulta actividades por categoría, modalidad y fecha.</p>
+                    </article>
+
+                    <article class="benefit-card">
+                        <h4>Información clara</h4>
+                        <p>Visualiza rápidamente cupos, ubicación y tipo de evento.</p>
+                    </article>
+
+                    <article class="benefit-card">
+                        <h4>Preparado para interacción</h4>
+                        <p>El sitio se ampliará con búsqueda, filtros y registros.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Aside informativo separado del contenido principal -->
+        <aside>
+            <h4>Evento destacado</h4>
+            <p>
+                <strong>React Summit Alajuela</strong><br>
+                Fecha: <time datetime="2026-06-15">15 de junio de 2026</time><br>
+                Cupos disponibles: <span>35</span>
+            </p>
+            <small>
+                La información mostrada es parte de un ejemplo académico.
+            </small>
+        </aside>
+
+        <!-- Contenido multimedia -->
+        <section>
+            <div class="container">
+                <h2>Contenido multimedia</h2>
+
+                <h3>Video promocional</h3>
+                <video controls width="500">
+                    <source src="assets/video/promo-evento.mp4" type="video/mp4">
+                    Su navegador no soporta la reproducción de video.
+                </video>
+
+                <h3>Audio de bienvenida</h3>
+                <audio controls>
+                    <source src="assets/audio/bienvenida.mp3" type="audio/mpeg">
+                    Su navegador no soporta la reproducción de audio.
+                </audio>
+            </div>
+        </section>
+
+        <!-- Ubicación general -->
+        <section>
+            <div class="container">
+                <h2>Ubicación general</h2>
+                <p>
+                    Algunos eventos se realizarán en sedes universitarias, auditorios y espacios de innovación.
                 </p>
 
-                <div class="hero-text-buttons">
-                    <a class="button primary" href="objetos.html">Ver objetos</a>
-                    <a class="button secondary" href="reportar.html">Publicar reporte</a>
-                </div>
+                <iframe src="https://www.google.com/maps?q=Alajuela,Costa%20Rica&output=embed" width="600" height="350"
+                    loading="lazy" title="Mapa de Alajuela Costa Rica">
+                </iframe>
             </div>
-
-            <div class="hero-image">
-                <img src="assets/images/hero-found-objects.png"
-                    alt="Imagen de objetos encontrados organizados sobre una mesa">
-            </div>
-        </section>
-
-        <!-- About -->
-        <section class="about">
-            <h2>¿Cómo funciona?</h2>
-
-            <div class="about-grid">
-                <article>
-                    <h3>1. Reporta</h3>
-
-                    <p>
-                        Si encontraste un objeto dentro del campus,
-                        publica una descripción y una fotografía.
-                    </p>
-                </article>
-
-                <article>
-                    <h3>2. Busca</h3>
-
-                    <p>
-                        Explora los reportes recientes para verificar
-                        si alguien encontró tu pertenencia.
-                    </p>
-                </article>
-
-                <article>
-                    <h3>3. Recupera</h3>
-
-                    <p>
-                        Contacta al responsable del reporte y coordina
-                        la entrega del objeto.
-                    </p>
-                </article>
-            </div>
-        </section>
-
-        <!-- Juego -->
-        <section class="game">
-            <h2>Encuentra el objeto perdido</h2>
-
-            <p class="game-target">
-                Busca y toca: <span id="target-name"></span>
-            </p>
-
-            <div class="game-scene-wrapper">
-                <div class="game-scene">
-
-                    <img src="assets/images/game-room.png" alt="Habitación universitaria">
-
-                    <button class="hitbox headphones" data-object="Audífonos"></button>
-                    <button class="hitbox backpack" data-object="Mochila"></button>
-                    <button class="hitbox laptop" data-object="Laptop"></button>
-                    <button class="hitbox shoes" data-object="Zapatos"></button>
-                    <button class="hitbox skateboard" data-object="Patineta"></button>
-                    <button class="hitbox lamp" data-object="Lámpara"></button>
-                    <button class="hitbox clock" data-object="Reloj"></button>
-                    <button class="hitbox bottle" data-object="Botella"></button>
-                    <button class="hitbox books" data-object="Libros"></button>
-                    <button class="hitbox mug" data-object="Taza"></button>
-
-                </div>
-            </div>
-
-            <p id="game-message"></p>
         </section>
     </main>
 
-    <footer>
-        <div class="footer-brand">
-            <img src="assets/images/logo.svg" alt="Lo Encontré logo">
-        </div>
+    <!-- Pie de página -->
+    <footer id="contacto">
+        <h5>Contacto</h5>
+        <address>
+            TechEvents CR<br>
+            Correo: contacto@techeventscr.com<br>
+            Alajuela, Costa Rica
+        </address>
 
-        <div class="footer-bottom">
-            <p>&copy; 2026 Lo Encontré. Todos los derechos reservados.</p>
-        </div>
+        <h6>Enlaces rápidos</h6>
+        <ul>
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="eventos.html">Eventos</a></li>
+            <li><a href="https://developer.mozilla.org/es/docs/Web/HTML" target="_blank">MDN HTML</a></li>
+        </ul>
+
+        <p>
+            <small>&copy; 2026 TechEvents CR. Todos los derechos reservados.</small>
+        </p>
     </footer>
-
-    <script src="js/script.js"></script>
 </body>
 
 </html>
