@@ -1,1397 +1,464 @@
-/* =========================
-CSS BASE
-Reglas generales del sitio
-========================= */
+/* Fuentes */
+@font-face {
+    font-family: "Manrope";
+    src: url("../assets/fonts/Manrope-VariableFont_wght.ttf") format("truetype");
+    font-weight: 300 800;
+    font-style: normal;
+}
 
-/* Elimina márgenes y espacios automáticos del navegador */
+@font-face {
+    font-family: "Instrument Serif";
+    src: url("../assets/fonts/InstrumentSerif-Regular.ttf") format("truetype");
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Instrument Serif";
+    src: url("../assets/fonts/InstrumentSerif-Italic.ttf") format("truetype");
+    font-weight: 400;
+    font-style: italic;
+}
+
+/* General */
+:root {
+    --paper: #f5f0e8;
+    --ink: #161616;
+    --muted: #665f55;
+    --line: #d8cab7;
+    --white: #fffaf2;
+    --green: #1f6a4d;
+    --coral: #c84f3d;
+    --gold: #b98a2f;
+    --blue: #285d8f;
+    --shadow: 0 18px 48px rgba(26, 20, 12, .12);
+}
+
 * {
-    margin: 0;
-    padding: 0;
     box-sizing: border-box;
 }
 
-/* Configuración general del documento */
 html {
-    font-size: 16px;
     scroll-behavior: smooth;
 }
 
-/* Estilo general del sitio */
 body {
-    font-family: Arial, Helvetica, sans-serif;
-    background-color: #f4f7fb;
-    color: #1f2937;
+    margin: 0;
+    color: var(--ink);
+    font-family: "Manrope", Arial, sans-serif;
     line-height: 1.6;
-
-    /*  Espacio para que el header fixed no tape el contenido */
-    padding-top: 88px;
+    background:
+        linear-gradient(90deg, rgba(22, 22, 22, .035) 1px, transparent 1px),
+        linear-gradient(rgba(22, 22, 22, .025) 1px, transparent 1px),
+        var(--paper);
+    background-size: 48px 48px;
 }
 
-/* Multimedia adaptable */
-img,
-video,
-iframe {
-    max-width: 100%;
-}
-
-/* Evita deformación y espacios inferiores */
-img {
-    height: auto;
-    display: block;
-}
-
-/* Enlaces sin subrayado */
-a {
-    text-decoration: none;
-}
-
-/* Viñetas dentro del bloque */
-ul {
-    list-style-position: inside;
-}
-
-/* =========================
-UTILIDADES GENERALES
-========================= */
-
-/* Contenedor centrado reutilizable */
-.container {
-    width: min(90%, 1100px);
+header,
+main {
+    max-width: 1180px;
     margin: 0 auto;
+    padding: 0 16px;
 }
 
-/* Separación general entre secciones */
-section,
-aside {
-    padding: 48px 0;
-}
-
-/* Estilo base para títulos */
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-    color: #0f172a;
-    margin-bottom: 15px;
-}
-
-/* Separación entre párrafos */
-p {
-    margin-bottom: 15px;
-}
-
-/* =========================
-HEADER Y NAVEGACIÓN
-========================= */
-
-/* Header fijo superior */
-.site-header {
-    background-color: #00194a;
-    color: white;
-    padding: 18px 0;
-    border-bottom: 4px solid #00b4d8;
-
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-
-    z-index: 1000;
-}
-
-/*  Flexbox alinea logo, menú y botón hamburguesa */
-.header-content {
+header {
+    min-height: 82px;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 20px;
+    gap: 24px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: linear-gradient(to bottom,
+            rgba(245, 240, 232, .95),
+            rgba(245, 240, 232, .6),
+            transparent);
+
 }
 
-/* Logo del sitio */
-.logo {
-    font-size: 1.4rem;
-    margin-bottom: 0;
-    white-space: nowrap;
+.brand,
+nav {
+    display: flex;
+    align-items: center;
 }
 
-/*  Checkbox oculto usado para abrir/cerrar menú */
+.brand {
+    width: 210px;
+    text-decoration: none;
+    transition: transform .2s ease;
+}
+
+nav {
+    gap: 6px;
+    padding: 6px;
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    background-color: var(--white);
+}
+
+nav a {
+    padding: 10px 14px;
+    border-radius: 6px;
+    color: var(--muted);
+    text-decoration: none;
+    font-size: .92rem;
+    font-weight: 700;
+}
+
+nav a.active,
+nav a:hover {
+    background-color: var(--ink);
+    color: var(--paper);
+}
+
 .menu-toggle {
     display: none;
-}
-
-/*  Botón hamburguesa oculto en escritorio */
-.menu-button {
-    display: none;
-    width: 38px;
-    height: 32px;
-    cursor: pointer;
-}
-
-/*  Líneas del botón hamburguesa */
-.menu-button span {
-    display: block;
-    height: 4px;
-    margin-bottom: 6px;
-    background-color: white;
-    border-radius: 4px;
-}
-
-/* Menú principal */
-.main-nav ul {
-    list-style: none;
-
-    /*  Flexbox organiza enlaces en fila */
-    display: flex;
-    align-items: center;
-    gap: 12px;
-}
-
-/* Enlaces del menú */
-.main-nav a {
-    color: white;
-    font-weight: bold;
-    padding: 8px 10px;
-    border-radius: 6px;
-    display: inline-block;
-}
-
-/* Cambio visual al pasar el mouse */
-.main-nav a:hover {
-    background-color: #00b4d8;
-    color: #00194a;
-}
-
-/* =========================
-HERO
-========================= */
-
-.hero {
-    background-color: #e0f2fe;
-    padding: 70px 0;
-}
-
-/*  Flexbox crea dos columnas responsivas */
-.hero-content {
-    display: flex;
-    align-items: center;
-    gap: 40px;
-}
-
-/* Columna de texto */
-.hero-text {
-    flex: 1;
-}
-
-/* Título principal */
-.hero-text h1 {
-    font-size: clamp(2rem, 5vw, 2.8rem);
-    color: #00194a;
-    margin-bottom: 20px;
-    line-height: 1.2;
-}
-
-/* Texto del hero */
-.hero-text p {
-    font-size: 1.1rem;
-    color: #334155;
-    margin-bottom: 20px;
-}
-
-/* Etiqueta decorativa */
-.hero-badge {
-    display: inline-block;
-    background-color: #dbeafe;
-    color: #00194a;
-    padding: 6px 12px;
-    border-radius: 20px;
-    font-weight: bold;
-    margin-bottom: 15px;
-}
-
-/* Columna de imagen */
-.hero-image {
-    flex: 1;
-    background-color: white;
-    padding: 15px;
-    border-radius: 18px;
-    box-shadow: 0 8px 20px rgba(15, 23, 42, 0.08);
-}
-
-/* Imagen principal */
-.hero-image img {
-    width: 100%;
-    border-radius: 12px;
-}
-
-/* Texto bajo imagen */
-.hero-image figcaption {
-    margin-top: 10px;
-    font-size: 0.9rem;
-    color: #64748b;
-    text-align: center;
-}
-
-/* Caja informativa */
-.hero-info {
-    margin-top: 25px;
-    padding: 28px 18px 18px 18px;
-    background-color: rgba(255, 255, 255, 0.7);
-    border-left: 5px solid #00b4d8;
-    border-radius: 10px;
-
-    /* Referencia para la etiqueta absoluta */
-    position: relative;
-}
-
-/* Etiqueta dentro de la caja */
-.info-label {
-    position: absolute;
-    top: -12px;
-    right: 18px;
-
-    background-color: #00194a;
-    color: white;
-    padding: 4px 10px;
-    border-radius: 20px;
-    font-size: 0.75rem;
-    font-weight: bold;
-
-    z-index: 2;
-}
-
-/* =========================
-BOTONES
-========================= */
-
-/* Enlace con apariencia de botón */
-.btn-primary {
-    display: inline-block;
-    background-color: #00194a;
-    color: white;
-    padding: 12px 22px;
-    border-radius: 8px;
-    font-weight: bold;
-}
-
-/* Hover del botón principal */
-.btn-primary:hover {
-    background-color: #00b4d8;
-    color: #00194a;
-}
-
-/* Botón secundario */
-.btn-secondary {
-    background-color: #00b4d8;
-    color: #00194a;
-    border: none;
-    padding: 12px 18px;
-    border-radius: 8px;
-    font-weight: bold;
-    cursor: pointer;
-}
-
-/* Hover del botón secundario */
-.btn-secondary:hover {
-    background-color: #0096c7;
-    color: white;
-}
-
-/* =========================
-SOBRE LA PLATAFORMA
-========================= */
-
-#sobre-plataforma {
-    background-color: white;
-}
-
-#sobre-plataforma ul {
-    padding-left: 20px;
-    margin-top: 15px;
-}
-
-#sobre-plataforma li {
-    margin-bottom: 10px;
-}
-
-/* =========================
-EVENTOS
-========================= */
-
-.events-section {
-    background-color: #f4f7fb;
-}
-
-/*  Grid crea columnas automáticas y responsivas */
-.events-grid {
-    display: grid;
-
-    /*  Ajusta cantidad de columnas según espacio disponible */
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-
-    gap: 28px;
-    align-items: stretch;
-}
-
-/* Tarjeta de evento */
-.event-card {
-    background-color: white;
-    border: 1px solid #dbeafe;
-    border-radius: 16px;
-    overflow: hidden;
-    box-shadow: 0 8px 20px rgba(15, 23, 42, 0.08);
-
-    position: relative;
-
-    /*  Flex interno mantiene contenido ordenado verticalmente */
-    display: flex;
     flex-direction: column;
-}
-
-/* Elimina márgenes propios del figure */
-.event-card figure {
-    margin: 0;
-}
-
-/* Imagen de tarjeta */
-.event-card img {
-    width: 100%;
-    height: 220px;
-    object-fit: cover;
-}
-
-/* Texto bajo imagen */
-.event-card figcaption {
-    font-size: 0.8rem;
-    color: #64748b;
-
-    /*  Más espacio para que no quede pegado */
-    padding: 10px 16px 0 16px;
-}
-
-/* Contenido textual de tarjeta */
-.event-card-content {
-    /*  Corrige texto pegado a la orilla */
-    padding: 20px;
-
-    /*  Hace que el contenido ocupe el espacio disponible */
-    flex: 1;
-}
-
-/* Párrafos dentro de tarjetas */
-.event-card-content p {
-    margin-bottom: 10px;
-}
-
-/* Etiqueta superior de tarjeta */
-.card-label {
-    position: absolute;
-    top: 12px;
-    right: 12px;
-
-    background-color: #00194a;
-    color: white;
-    padding: 5px 10px;
-    border-radius: 20px;
-
-    font-size: 0.75rem;
-    font-weight: bold;
-
-    z-index: 5;
-}
-
-/* Categoría del evento */
-.event-category {
-    display: inline-block;
-    background-color: #dbeafe;
-    color: #00194a;
-    padding: 6px 12px;
-    border-radius: 20px;
-    font-size: 0.85rem;
-    font-weight: bold;
-    margin-bottom: 12px;
-}
-
-/* =========================
-ASIDE
-========================= */
-
-aside {
-    background-color: #ecfeff;
-    border-top: 1px solid #bae6fd;
-    border-bottom: 1px solid #bae6fd;
-}
-
-/*  Centra contenido del aside sin repetir estilos */
-aside p,
-aside small,
-aside h2,
-aside h4 {
-    width: min(90%, 1100px);
-    margin-left: auto;
-    margin-right: auto;
-}
-
-aside small {
-    display: block;
-}
-
-/* =========================
-TABLA RESPONSIVA
-========================= */
-
-/*  Sección de tabla con separación visual */
-.table-section {
-    padding-top: 48px;
-    padding-bottom: 48px;
-}
-
-/*  Permite desplazamiento horizontal si la pantalla es estrecha */
-.table-responsive {
-    width: 100%;
-    overflow-x: auto;
-    border-radius: 14px;
-    box-shadow: 0 8px 20px rgba(15, 23, 42, 0.08);
-}
-
-/*  Tabla limpia, legible y adaptable */
-table {
-    width: 100%;
-    border-collapse: collapse;
-    background-color: white;
-    min-width: 650px;
-}
-
-/*  Encabezados y celdas con mejor separación */
-th,
-td {
-    padding: 14px 16px;
-    border-bottom: 1px solid #cbd5e1;
-    text-align: left;
-    vertical-align: top;
-}
-
-/*  Encabezado destacado */
-th {
-    background-color: #00194a;
-    color: white;
-    font-weight: bold;
-}
-
-/*  Alterna color para lectura */
-tr:nth-child(even) {
-    background-color: #f8fafc;
-}
-
-/*  Efecto suave al pasar mouse */
-tbody tr:hover {
-    background-color: #e0f2fe;
-}
-
-/*  Última fila sin borde inferior */
-tbody tr:last-child td {
-    border-bottom: none;
-}
-
-/* =========================
-MULTIMEDIA
-========================= */
-
-video,
-audio,
-iframe {
-    margin-top: 15px;
-    margin-bottom: 25px;
-    border-radius: 12px;
-}
-
-iframe {
-    width: 100%;
-}
-
-/* =========================
-FOOTER
-========================= */
-
-footer {
-    background-color: #00194a;
-    color: white;
-    padding: 35px 0;
-    text-align: center;
-}
-
-/* Enlaces del footer */
-footer a {
-    color: #90e0ef;
-}
-
-/* Hover del footer */
-footer a:hover {
-    color: white;
-}
-
-footer ul {
-    list-style: none;
-    margin: 20px 0;
-}
-
-footer li {
-    margin-bottom: 8px;
-}
-
-footer h5,
-footer h6 {
-    color: white;
-}
-
-footer address {
-    font-style: normal;
-    margin-bottom: 15px;
-}
-
-/* =========================
-UX: NAVEGACIÓN ACTIVA
-========================= */
-
-/*  Indica visualmente la página actual */
-.active-link {
-    background-color: #00b4d8;
-    color: #00194a;
-}
-
-/*  Mejora accesibilidad al navegar con teclado */
-.main-nav a:focus,
-.btn-primary:focus,
-.btn-secondary:focus,
-.btn-card:focus,
-.btn-link:focus {
-    outline: 3px solid #90e0ef;
-    outline-offset: 3px;
-}
-
-/* =========================
-UX: UBICACIÓN ACTUAL
-========================= */
-
-/*  Breadcrumb muestra dónde está el usuario */
-.breadcrumb {
-    background-color: white;
-    border-bottom: 1px solid #dbeafe;
-    padding: 12px 0;
-}
-
-/*  Distribución simple de ruta */
-.breadcrumb .container {
-    display: flex;
-    gap: 8px;
+    justify-content: center;
     align-items: center;
-    font-size: 0.95rem;
-}
+    gap: 5px;
 
-/*  Separador visual sin agregar texto extra al HTML */
-.breadcrumb a::after {
-    content: "/";
-    margin-left: 8px;
-    color: #64748b;
-}
+    width: 48px;
+    height: 48px;
 
-.breadcrumb a {
-    color: #0369a1;
-    font-weight: bold;
-}
-
-.breadcrumb span {
-    color: #475569;
-}
-
-/* =========================
-UX: JERARQUÍA VISUAL
-========================= */
-
-/*  Separa acción principal y secundaria */
-.hero-actions {
-    display: flex;
-    align-items: center;
-    gap: 14px;
-    flex-wrap: wrap;
-}
-
-/*  Acción secundaria menos fuerte que el botón principal */
-.btn-link {
-    color: #00194a;
-    font-weight: bold;
-    text-decoration: underline;
-    text-underline-offset: 4px;
-}
-
-/*  Beneficios resumidos para lectura rápida */
-.benefits-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 18px;
-    margin-top: 24px;
-}
-
-/*  Tarjetas informativas breves */
-.benefit-card {
-    background-color: #f8fafc;
-    border: 1px solid #dbeafe;
-    border-radius: 14px;
-    padding: 20px;
-}
-
-.benefit-card h3 {
-    color: #00194a;
-    margin-bottom: 8px;
-}
-
-.benefit-card p {
-    margin-bottom: 0;
-}
-
-/*  El título del evento debe destacar más que los datos */
-.event-card h3 {
-    font-size: 1.25rem;
-    color: #00194a;
-    margin-bottom: 12px;
-}
-
-/*  Estado de disponibilidad dentro de la tarjeta */
-.availability {
-    display: inline-block;
-    padding: 6px 10px;
-    border-radius: 20px;
-    font-weight: bold;
-    font-size: 0.85rem;
-}
-
-/*  Estado positivo */
-.available {
-    background-color: #dcfce7;
-    color: #166534;
-}
-
-/*  Botón dentro de tarjeta */
-.btn-card {
-    display: inline-block;
-    margin-top: 12px;
-    background-color: #00194a;
-    color: white;
-    padding: 10px 14px;
+    border: 1px solid var(--line);
     border-radius: 8px;
-    font-weight: bold;
+    background: var(--white);
+
+    cursor: pointer;
 }
 
-/*  Feedback visual al pasar el mouse */
-.btn-card:hover {
-    background-color: #00b4d8;
-    color: #00194a;
-}
+.menu-toggle span {
+    width: 18px;
+    height: 2px;
 
-/* =========================
-UX: ESTADOS DE INTERFAZ
-========================= */
-
-/* ***  Estados visibles antes del listado */
-.ui-states-demo {
-    display: flex;
-    gap: 12px;
-    flex-wrap: wrap;
-    margin: 18px 0 28px 0;
-}
-
-/* ***  Base visual de cada estado */
-.state-box {
-    padding: 10px 14px;
-    border-radius: 20px;
-    font-weight: bold;
-    font-size: 0.9rem;
-}
-
-/* ***  Estado exitoso */
-.state-success {
-    background-color: #dcfce7;
-    color: #166534;
-}
-
-/* ***  Estado de advertencia */
-.state-warning {
-    background-color: #fef3c7;
-    color: #92400e;
-}
-
-/* ***  Estado de alerta */
-.state-danger {
-    background-color: #fee2e2;
-    color: #991b1b;
-}
-
-/* ***  Estado vacío simulado */
-.empty-state {
-    margin-top: 32px;
-    padding: 28px;
-    background-color: white;
-    border: 2px dashed #cbd5e1;
-    border-radius: 16px;
-    text-align: center;
-}
-
-/* ***  Contenido del estado vacío */
-.empty-state h3 {
-    color: #00194a;
-}
-
-/* ***  Contenido del estado vacío */
-.empty-state p {
-    color: #475569;
-    margin-bottom: 0;
-}
-
-/* =========================
-MEDIA QUERY TABLET
-========================= */
-
-/*  Ajustes para pantallas medianas */
-@media (max-width: 900px) {
-    body {
-        padding-top: 86px;
-    }
-
-    /*  Hero pasa de dos columnas a una columna */
-    .hero-content {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-
-    .hero-text,
-    .hero-image {
-        width: 100%;
-    }
-
-    .hero-image {
-        max-width: 650px;
-    }
-
-    /*  Menú todavía visible, pero con menos separación */
-    .main-nav ul {
-        gap: 6px;
-    }
-
-    .main-nav a {
-        font-size: 0.9rem;
-        padding: 7px 8px;
-    }
-}
-
-/* =========================
-MEDIA QUERY MÓVIL
-========================= */
-
-/*  Ajustes para pantallas pequeñas */
-@media (max-width: 700px) {
-    body {
-        padding-top: 78px;
-    }
-
-    .site-header {
-        padding: 14px 0;
-    }
-
-    .header-content {
-        position: relative;
-    }
-
-    /*  Muestra el botón hamburguesa */
-    .menu-button {
-        display: block;
-    }
-
-    /*  Menú oculto inicialmente */
-    .main-nav {
-        display: none;
-        position: absolute;
-        top: 52px;
-        left: 0;
-        width: 100%;
-
-        background-color: #00194a;
-        border-top: 1px solid #00b4d8;
-        padding: 14px;
-        border-radius: 0 0 12px 12px;
-
-        z-index: 999;
-    }
-
-    /*  Cuando el checkbox está activo, se muestra el menú */
-    .menu-toggle:checked~.main-nav {
-        display: block;
-    }
-
-    /*  Menú vertical en móvil */
-    .main-nav ul {
-        display: flex;
-        flex-direction: column;
-        align-items: stretch;
-        gap: 8px;
-    }
-
-    .main-nav a {
-        display: block;
-        padding: 12px;
-        background-color: rgba(255, 255, 255, 0.08);
-    }
-
-    .hero {
-        padding: 48px 0;
-    }
-
-    .hero-text h1 {
-        font-size: 2rem;
-    }
-
-    .events-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .event-card img {
-        height: 200px;
-    }
-
-    /*  La tabla cambia a formato tarjeta en móvil */
-    .table-responsive {
-        overflow-x: visible;
-        box-shadow: none;
-    }
-
-    table {
-        min-width: 0;
-        border-collapse: separate;
-        border-spacing: 0 14px;
-        background-color: transparent;
-    }
-
-    thead {
-        display: none;
-    }
-
-    tbody,
-    tr,
-    td {
-        display: block;
-        width: 100%;
-    }
-
-    tr {
-        background-color: white;
-        border: 1px solid #dbeafe;
-        border-radius: 14px;
-        padding: 12px;
-        box-shadow: 0 6px 16px rgba(15, 23, 42, 0.08);
-    }
-
-    td {
-        border-bottom: 1px solid #e2e8f0;
-        padding: 10px 8px;
-    }
-
-    td:last-child {
-        border-bottom: none;
-    }
-
-    /*  Muestra el nombre de cada columna antes del valor */
-    td::before {
-        content: attr(data-label);
-        display: block;
-        font-weight: bold;
-        color: #00194a;
-        margin-bottom: 4px;
-    }
-
-    /*  Resalta visualmente el nombre del evento en móvil */
-    td[data-label="Evento"] {
-        color: #00194a;
-        font-weight: bold;
-        font-size: 1rem;
-        background-color: #dbeafe;
-        padding: 12px;
-        border-radius: 8px;
-        margin-bottom: 8px;
-    }
-
-    /* *** Breadcrumb más compacto en celular */
-    .breadcrumb .container {
-        font-size: 0.85rem;
-        flex-wrap: wrap;
-    }
-
-    /* *** Acciones del hero en columna para mejor toque */
-    .hero-actions {
-        flex-direction: column;
-        align-items: stretch;
-    }
-
-    .btn-link {
-        text-align: center;
-        padding: 10px;
-    }
-
-    /* *** Estados de interfaz ocupan todo el ancho */
-    .state-box {
-        width: 100%;
-        text-align: center;
-    }
-
-    .btn-card {
-        width: 100%;
-        text-align: center;
-    }
-}
-
-/* =========================
-MEDIA QUERY MÓVIL PEQUEÑO
-========================= */
-
-/*  Ajustes para teléfonos angostos */
-@media (max-width: 420px) {
-    .logo {
-        font-size: 1.15rem;
-    }
-
-    .hero-text h1 {
-        font-size: 1.75rem;
-    }
-
-    .btn-primary,
-    .btn-secondary {
-        width: 100%;
-        text-align: center;
-    }
-
-    .event-card-content {
-        padding: 18px;
-    }
-
-    .card-label {
-        font-size: 0.7rem;
-        right: 8px;
-    }
-}
-
-/* =========================
-SEMANA 5 CLASE 1
-EVENTOS DINÁMICOS + FILTROS
-========================= */
-
-.events-dynamic-section {
-    background:
-        radial-gradient(circle at top left, rgba(0, 180, 216, 0.18), transparent 34%),
-        linear-gradient(135deg, #f8fafc 0%, #e0f2fe 100%);
-    padding: 64px 0;
-}
-
-.section-heading {
-    max-width: 760px;
-    margin-bottom: 32px;
-}
-
-.section-badge {
-    display: inline-block;
-    background-color: #dbeafe;
-    color: #00194a;
-    padding: 6px 14px;
+    background: var(--ink);
     border-radius: 999px;
-    font-weight: bold;
-    font-size: 0.85rem;
-    margin-bottom: 12px;
 }
 
-.section-heading h2 {
-    color: #00194a;
-    font-size: clamp(1.8rem, 4vw, 2.5rem);
-    line-height: 1.15;
+h1,
+h2 {
+    font-family: "Instrument Serif", Georgia, serif;
+    font-weight: 400;
+    line-height: .95;
 }
 
-.section-heading p {
-    color: #475569;
+h1 {
+    margin-bottom: 24px;
+    font-size: clamp(4rem, 8vw, 8rem);
+}
+
+h2 {
+    font-size: clamp(2.4rem, 5vw, 5.4rem);
+}
+
+p {
+    color: var(--muted);
     font-size: 1.05rem;
 }
 
-/* Panel de filtros */
-.filters-panel {
-    background-color: rgba(255, 255, 255, 0.92);
-    border: 1px solid #dbeafe;
-    border-radius: 18px;
-    padding: 22px;
-    margin-bottom: 24px;
-    box-shadow: 0 12px 30px rgba(15, 23, 42, 0.08);
-
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 16px;
-    align-items: end;
+.button {
+    min-height: 46px;
+    border: 1px solid var(--ink);
+    border-radius: 8px;
+    padding: 12px 18px;
+    font-weight: 800;
+    text-decoration: none;
+    transition: .2s ease;
 }
 
-.filter-group {
+.button.primary {
+    background-color: var(--ink);
+    color: var(--paper);
+    box-shadow: 4px 4px 0 var(--muted);
+}
+
+.button.primary:hover {
+    transform: translate(6px, 6px);
+    box-shadow: 0px 0px 0 var(--muted);
+}
+
+.button.secondary {
+    background-color: var(--white);
+    color: var(--ink);
+    box-shadow: 4px 4px 0 var(--line);
+}
+
+.button.secondary:hover {
+    transform: translate(6px, 6px);
+    box-shadow: 0px 0px 0 var(--line);
+}
+
+/* Separadores entre secciones */
+
+section:not(:last-child) {
+    border-bottom: 1px solid var(--line);
+}
+
+/* Hero */
+
+.hero {
     display: flex;
-    flex-direction: column;
-    gap: 7px;
+    align-items: center;
+    height: 100vh;
+    margin-top: -82px;
 }
 
-.filter-group label {
-    color: #00194a;
-    font-weight: bold;
-    font-size: 0.9rem;
-}
-
-.filter-group select {
-    width: 100%;
-    border: 1px solid #cbd5e1;
-    background-color: #f8fafc;
-    color: #1f2937;
-    border-radius: 10px;
-    padding: 11px 12px;
-    font-size: 0.95rem;
-}
-
-.filter-group select:focus {
-    outline: 3px solid #90e0ef;
-    border-color: #00b4d8;
-}
-
-.btn-clear {
-    border: none;
-    border-radius: 10px;
-    background-color: #00194a;
-    color: white;
-    padding: 12px 16px;
-    font-weight: bold;
-    cursor: pointer;
-}
-
-.btn-clear:hover {
-    background-color: #00b4d8;
-    color: #00194a;
-}
-
-/* Mensaje dinámico */
-.events-message {
-    display: inline-block;
-    background-color: white;
-    color: #334155;
-    border-left: 5px solid #00b4d8;
-    border-radius: 10px;
-    padding: 12px 16px;
-    font-weight: bold;
-    box-shadow: 0 8px 18px rgba(15, 23, 42, 0.08);
-}
-
-/* Grid dinámico */
-.dynamic-events-grid {
-    margin-top: 28px;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-    gap: 26px;
-}
-
-/* Tarjeta moderna */
-.dynamic-event-card {
-    background-color: white;
-    border: 1px solid #dbeafe;
-    border-radius: 20px;
+.hero-image {
+    transform: rotate(1.8deg);
+    width: clamp(300px, 40vw, 600px);
+    height: clamp(300px, 40vw, 600px);
+    flex-shrink: 0;
     overflow: hidden;
-    box-shadow: 0 10px 24px rgba(15, 23, 42, 0.08);
-    transition: transform 0.25s ease, box-shadow 0.25s ease;
+    outline: 1px solid var(--line);
+    outline-offset: -18px;
+    border-radius: 6px;
 }
 
-.dynamic-event-card:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 18px 36px rgba(15, 23, 42, 0.16);
-}
-
-.event-image-box {
-    height: 210px;
-    position: relative;
-    overflow: hidden;
-}
-
-.event-image-box img {
+.hero-image img {
     width: 100%;
     height: 100%;
     object-fit: cover;
+
 }
 
-.event-status {
-    position: absolute;
-    top: 14px;
-    right: 14px;
-    padding: 7px 12px;
-    border-radius: 999px;
-    font-size: 0.78rem;
-    font-weight: bold;
-    box-shadow: 0 8px 18px rgba(15, 23, 42, 0.18);
-}
-
-.dynamic-event-content {
-    padding: 22px;
-}
-
-.dynamic-event-content h3 {
-    color: #00194a;
-    font-size: 1.25rem;
-    line-height: 1.3;
-    margin-top: 12px;
-}
-
-.event-modality {
-    color: #475569;
-}
-
-.event-tags {
+.hero-text-buttons {
     display: flex;
     flex-wrap: wrap;
-    gap: 8px;
-    margin-top: 16px;
+    gap: 12px;
+    margin-top: 30px;
 }
 
-.event-tags span {
-    background-color: #f1f5f9;
-    color: #334155;
-    border: 1px solid #dbeafe;
-    border-radius: 999px;
-    padding: 6px 10px;
-    font-size: 0.8rem;
-    font-weight: bold;
+/* About */
+
+.about {
+    padding: 120px 0;
 }
 
-/* Reutiliza idea de estados existentes */
-.state-success {
-    background-color: #dcfce7;
-    color: #166534;
+.about-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
 }
 
-.state-warning {
-    background-color: #fef3c7;
-    color: #92400e;
+.about article {
+    padding: 28px;
+    background-color: rgba(255, 250, 242, .75);
+    border: 1px solid var(--line);
+    border-radius: 8px;
 }
 
-.state-danger {
-    background-color: #fee2e2;
-    color: #991b1b;
-}
-
-/* Estado vacío */
-.dynamic-empty-state {
-    grid-column: 1 / -1;
-    background-color: white;
-    border: 2px dashed #94a3b8;
-    border-radius: 20px;
-    padding: 42px 24px;
+/* Footer */
+footer {
+    margin-top: 120px;
+    padding: 40px 0;
+    border-top: 1px solid var(--line);
     text-align: center;
-    color: #475569;
 }
 
-.dynamic-empty-state h3 {
-    color: #00194a;
+.footer-brand img {
+    width: 180px;
 }
 
-/* Responsive */
-@media (max-width: 900px) {
-    .filters-panel {
-        grid-template-columns: repeat(2, 1fr);
-    }
+.footer-bottom p {
+    font-size: .9rem;
 }
 
-@media (max-width: 700px) {
-    .events-dynamic-section {
-        padding: 46px 0;
+/* Responsive*/
+@media (max-width: 735px) {
+
+    .hero {
+        height: auto;
+        min-height: auto;
+
+        flex-direction: column-reverse;
+        gap: 40px;
+
+        margin-top: 0;
+        padding: 40px 0 80px;
     }
 
-    .filters-panel {
-        grid-template-columns: 1fr;
+    h1 {
+        margin-top: 0;
     }
 
-    .events-message {
-        display: block;
+    .hero-image {
+        width: 100%;
+        height: auto;
+    }
+
+    .menu-toggle {
+        display: flex;
+    }
+
+    nav {
+        display: none;
+    }
+
+    nav.show {
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+
+        position: absolute;
+        top: 70px;
+        left: 16px;
+        right: 16px;
+
+        padding: 6px;
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        background: var(--white);
+    }
+
+    nav.show a {
+        width: 100%;
         text-align: center;
-    }
-
-    .dynamic-events-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .event-image-box {
-        height: 200px;
-    }
-}
-
-/* =========================
-RETO FORMULARIO INSCRIPCIÓN
-SEMANA 5 CLASE 1
-========================= */
-.registration-section {
-    background-color: #f8fafc;
-    padding: 64px 0;
-}
-
-.registration-layout {
-    display: grid;
-    grid-template-columns: 380px 1fr;
-    gap: 28px;
-    align-items: start;
-}
-
-.registration-form,
-.registration-detail,
-.registration-summary {
-    background-color: white;
-    border: 1px solid #dbeafe;
-    border-radius: 20px;
-    box-shadow: 0 10px 24px rgba(15, 23, 42, 0.08);
-}
-
-.registration-form {
-    padding: 24px;
-}
-
-.form-group {
-    margin-bottom: 18px;
-}
-
-.form-group label {
-    display: block;
-    color: #00194a;
-    font-weight: bold;
-    margin-bottom: 7px;
-}
-
-.form-group input,
-.form-group select {
-    width: 100%;
-    border: 1px solid #cbd5e1;
-    border-radius: 10px;
-    padding: 12px;
-    font-size: 0.95rem;
-    background-color: #f8fafc;
-}
-
-.form-group input:focus,
-.form-group select:focus {
-    outline: 3px solid #90e0ef;
-    border-color: #00b4d8;
-}
-
-#btnVistaPreviaInscripcion {
-    width: 100%;
-    border: none;
-    border-radius: 10px;
-    background-color: #00194a;
-    color: white;
-    padding: 13px 18px;
-    font-weight: bold;
-    cursor: pointer;
-}
-
-#btnVistaPreviaInscripcion:hover {
-    background-color: #00b4d8;
-    color: #00194a;
-}
-
-.registration-detail {
-    overflow: hidden;
-}
-
-.registration-detail img {
-    width: 100%;
-    height: 260px;
-    object-fit: cover;
-}
-
-.detail-content {
-    padding: 24px;
-}
-
-.detail-content h3 {
-    color: #00194a;
-}
-
-.detail-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 14px;
-    margin: 18px 0;
-}
-
-.detail-item {
-    background-color: #f8fafc;
-    border: 1px solid #dbeafe;
-    border-radius: 12px;
-    padding: 14px;
-}
-
-.detail-item span {
-    display: block;
-    color: #64748b;
-    font-size: 0.85rem;
-}
-
-.detail-item strong {
-    color: #00194a;
-    font-size: 1.1rem;
-}
-
-.detail-empty {
-    padding: 36px;
-    text-align: center;
-    color: #475569;
-}
-
-.registration-summary {
-    margin-top: 28px;
-    padding: 22px;
-    border-left: 6px solid #00b4d8;
-    color: #334155;
-    font-weight: bold;
-}
-
-.summary-warning {
-    border-left-color: #f59e0b;
-    background-color: #fffbeb;
-}
-
-.summary-success {
-    border-left-color: #22c55e;
-    background-color: #f0fdf4;
-}
-
-.event-tags {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
-    margin-top: 14px;
-}
-
-.event-tags span {
-    background-color: #dbeafe;
-    color: #00194a;
-    border-radius: 999px;
-    padding: 6px 10px;
-    font-size: 0.8rem;
-    font-weight: bold;
-}
-
-@media (max-width: 900px) {
-    .registration-layout {
-        grid-template-columns: 1fr;
     }
 }
 
 @media (max-width: 600px) {
-    .detail-grid {
-        grid-template-columns: 1fr;
+    .about-grid {
+        grid-template-columns: repeat(1, 1fr);
     }
 
-    .registration-detail img {
-        height: 210px;
+}
+
+@media (max-width: 370px) {
+    .brand img {
+        width: 170px;
     }
+}
+
+/* Juego */
+
+.game {
+    padding: 120px 0;
+}
+
+.game-target {
+    margin-bottom: 30px;
+    font-size: 1.2rem;
+    font-weight: 700;
+}
+
+.game-scene-wrapper {
+    width: min(100%, 1000px);
+    margin: 0 auto;
+    padding: 22px;
+    background: var(--white);
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    box-shadow: 0 10px 30px rgba(0,0,0,.08);
+    transform: rotate(-1.2deg);
+}
+
+.game-scene {
+    position: relative;
+}
+
+.game-scene img {
+    display: block;
+    width: 100%;
+    border-radius: 4px;
+}
+
+.feedback {
+    position: absolute;
+    color: var(--white);
+    font-size: 1.8rem;
+    font-weight: 800;
+    pointer-events: none;
+    text-shadow:
+        0 2px 8px rgba(0, 0, 0, .45);
+    animation: fadeOut .8s ease forwards;
+}
+
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+    }
+
+    to {
+        opacity: 0;
+    }
+}
+
+.hitbox {
+    position: absolute;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    outline: 2px solid var(--coral);
+}
+
+.headphones {
+    top: 0%;
+    left: 81%;
+    width: 4.7%;
+    height: 8.1%;
+}
+
+.backpack {
+    top: 17%;
+    left: 36%;
+    width: 11.5%;
+    height: 21.4%;
+}
+
+.laptop {
+    top: 31%;
+    left: 85%;
+    width: 13.8%;
+    height: 10.3%;
+}
+
+.shoes {
+    top: 38%;
+    left: 52%;
+    width: 10.3%;
+    height: 9.2%;
+}
+
+.skateboard {
+    top: 5%;
+    left: 49%;
+    width: 6.3%;
+    height: 31%;
+}
+
+.lamp {
+    top: 6%;
+    left: 84%;
+    width: 5.7%;
+    height: 19.5%;
+}
+
+.clock {
+    top: 21%;
+    left: 25%;
+    width: 3.8%;
+    height: 6.9%;
+}
+
+.bottle {
+    top: 78%;
+    left: 25%;
+    width: 5.7%;
+    height: 20.6%;
+}
+
+.books {
+    top: 73%;
+    left: 53%;
+    width: 14.9%;
+    height: 17.2%;
+}
+
+.mug {
+    top: 19%;
+    left: 80%;
+    width: 4%;
+    height: 6.9%;
 }
