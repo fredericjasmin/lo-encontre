@@ -4,15 +4,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lo Encontre | Objetos perdidos del campus</title>
+    <title>Lo Encontré | Objetos perdidos del campus</title>
     <link rel="stylesheet" href="css/style.css">
     <link rel="shortcut icon" href="assets/images/favicon.ico" type="image/x-icon">
 </head>
 
 <body>
+
     <header>
         <a href="index.html" class="brand">
-            <img src="assets/images/logo.svg" alt="Lo encontre logo">
+            <img src="assets/images/logo.svg" alt="Lo Encontré logo">
         </a>
 
         <button class="menu-toggle" aria-label="Abrir menú">
@@ -30,24 +31,24 @@
 
     <main>
 
-        <!-- Hero -->
-        <section class="objects">
+        <section>
             <div class="objects-text">
+
                 <h1>Objetos reportados</h1>
 
                 <p>
                     Explora los objetos perdidos y encontrados
                     reportados por la comunidad universitaria.
                 </p>
+
             </div>
         </section>
 
-        <!-- Filtros -->
         <section class="filters">
 
-            <input type="search" placeholder="Buscar objeto...">
+            <input id="searchInput" type="search" placeholder="Buscar objeto...">
 
-            <select>
+            <select id="categoryFilter">
                 <option>Todas las categorías</option>
                 <option>Electrónicos</option>
                 <option>Accesorios</option>
@@ -56,7 +57,7 @@
                 <option>Otros</option>
             </select>
 
-            <select>
+            <select id="statusFilter">
                 <option>Todos los estados</option>
                 <option>Perdido</option>
                 <option>Encontrado</option>
@@ -65,104 +66,54 @@
 
         </section>
 
-        <!-- Objetos -->
-        <section class="objects-grid">
-
-            <article class="object-card">
-
-                <div class="object-image">
-                    <img src="assets/images/object-headphones.jpg" alt="Audífonos negros">
-                </div>
-
-                <div class="object-content">
-
-                    <span class="object-status found">
-                        Encontrado
-                    </span>
-
-                    <h3>Audífonos negros</h3>
-
-                    <p>
-                        Encontrados en el laboratorio de computo.
-                    </p>
-
-                    <div class="object-meta">
-                        <span>Laboratorio A</span>
-                        <span>01 Jun 2026</span>
-                    </div>
-
-                </div>
-
-            </article>
-
-            <article class="object-card">
-
-                <div class="object-image">
-                    <img src="assets/images/object-notebook.jpg" alt="Cuaderno">
-                </div>
-
-                <div class="object-content">
-
-                    <span class="object-status lost">
-                        Perdido
-                    </span>
-
-                    <h3>Cuaderno de cálculo</h3>
-
-                    <p>
-                        Cuaderno con apuntes y separadores de colores.
-                    </p>
-
-                    <div class="object-meta">
-                        <span>Aula 204</span>
-                        <span>30 May 2026</span>
-                    </div>
-
-                </div>
-
-            </article>
-
-            <article class="object-card">
-
-                <div class="object-image">
-                    <img src="assets/images/object-keys.jpg" alt="Llaves">
-                </div>
-
-                <div class="object-content">
-
-                    <span class="object-status recovered">
-                        Recuperado
-                    </span>
-
-                    <h3>Llaves con cinta verde</h3>
-
-                    <p>
-                        Recuperadas por seguridad del campus.
-                    </p>
-
-                    <div class="object-meta">
-                        <span>Cafetería</span>
-                        <span>28 May 2026</span>
-                    </div>
-
-                </div>
-
-            </article>
+        <section id="objectsGrid" class="objects-grid">
 
         </section>
 
     </main>
 
-
     <footer>
-        <div class="footer-brand">
-            <img src="assets/images/logo.svg" alt="Lo encontre logo">
+        <div class="footer-top">
+
+            <a href="index.html" class="footer-brand">
+                <img src="assets/images/logo.svg" alt="Lo Encontré logo">
+            </a>
+
+            <p class="footer-tagline">
+                Reportá. Buscá. Recuperá.
+            </p>
+
         </div>
+
         <div class="footer-bottom">
-            <p>&copy; 2026 Lo Encontre. Todos los derechos reservados.</p>
+
+            <p>
+                &copy; 2026 Lo Encontré. Todos los derechos reservados.
+            </p>
+
+            <p class="footer-credit">
+                Hecho por
+                <a href="https://bushcoding.com/fredericjasmin" target="_blank">
+                    Frederic Jasmin
+                </a>
+                ·
+                <a href="mailto:frederic@bushcoding.com">
+                    frederic@bushcoding.com
+                </a>
+            </p>
+
         </div>
     </footer>
+
+    <div id="imageModal" class="image-modal">
+
+        <img id="modalImage" src="" alt="">
+
+        <p>Toca cualquier parte para cerrar</p>
+
+    </div>
     <script src="js/script.js"></script>
+
 </body>
 
 </html>

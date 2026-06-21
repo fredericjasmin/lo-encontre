@@ -4,15 +4,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lo Encontre | Objetos perdidos del campus</title>
+    <title>Lo Encontré | Reportar objeto</title>
+
     <link rel="stylesheet" href="css/style.css">
     <link rel="shortcut icon" href="assets/images/favicon.ico" type="image/x-icon">
 </head>
 
 <body>
+
     <header>
+
         <a href="index.html" class="brand">
-            <img src="assets/images/logo.svg" alt="Lo encontre logo">
+            <img src="assets/images/logo.svg" alt="Lo Encontré logo">
         </a>
 
         <button class="menu-toggle" aria-label="Abrir menú">
@@ -26,114 +29,201 @@
             <a href="objetos.html">Objetos</a>
             <a class="active" href="reportar.html">Reportar</a>
         </nav>
+
     </header>
 
     <main>
 
-    <section class="report-hero">
-        <h1>Reportar objeto</h1>
+        <section class="report-hero">
 
-        <p>
-            Completa la información para ayudar a que el objeto
-            regrese con su propietario.
-        </p>
-    </section>
+            <h1>Reportar objeto</h1>
 
-    <section class="report-layout">
+            <p>
+                Completa la información para ayudar a que el objeto
+                regrese con su propietario.
+            </p>
 
-        <form class="report-form">
+        </section>
 
-            <div class="form-group">
-                <label for="type">Tipo de reporte</label>
+        <section class="report-layout">
 
-                <select id="type">
-                    <option>Objeto encontrado</option>
-                    <option>Objeto perdido</option>
-                </select>
-            </div>
+            <form
+                id="reportForm"
+                class="report-form">
 
-            <div class="form-group">
-                <label for="name">Nombre del objeto</label>
-                <input type="text" id="name">
-            </div>
+                <div class="form-group">
 
-            <div class="form-group">
-                <label for="category">Categoría</label>
+                    <label for="type">
+                        Tipo de reporte
+                    </label>
 
-                <select id="category">
-                    <option>Electrónicos</option>
-                    <option>Accesorios</option>
-                    <option>Académico</option>
-                    <option>Llaves</option>
-                    <option>Otros</option>
-                </select>
-            </div>
+                    <select id="type">
+                        <option>Objeto encontrado</option>
+                        <option>Objeto perdido</option>
+                    </select>
 
-            <div class="form-group">
-                <label for="place">Lugar</label>
-                <input type="text" id="place">
-            </div>
+                </div>
 
-            <div class="form-group">
-                <label for="date">Fecha</label>
-                <input type="date" id="date">
-            </div>
+                <div class="form-group">
 
-            <div class="form-group">
-                <label for="contact">Contacto</label>
-                <input type="text" id="contact">
-            </div>
+                    <label for="name">
+                        Nombre del objeto
+                    </label>
 
-            <div class="form-group full">
-                <label for="description">Descripción</label>
-                <textarea id="description"></textarea>
-            </div>
+                    <input
+                        type="text"
+                        id="name">
 
-            <div class="form-group full">
-                <label for="image">Fotografía</label>
-                <input type="file" id="image">
-            </div>
+                </div>
 
-            <button class="button primary">
-                Publicar reporte
-            </button>
+                <div class="form-group">
 
-        </form>
+                    <label for="category">
+                        Categoría
+                    </label>
 
-        <aside class="report-tips">
+                    <select id="category">
+                        <option>Electrónicos</option>
+                        <option>Accesorios</option>
+                        <option>Académico</option>
+                        <option>Llaves</option>
+                        <option>Otros</option>
+                    </select>
 
-            <h2>Consejos</h2>
+                </div>
 
-            <article>
-                <h3>Fotografía clara</h3>
-                <p>Muestra el objeto completo.</p>
-            </article>
+                <div class="form-group">
 
-            <article>
-                <h3>Ubicación exacta</h3>
-                <p>Indica el edificio o zona.</p>
-            </article>
+                    <label for="place">
+                        Lugar
+                    </label>
 
-            <article>
-                <h3>Descripción útil</h3>
-                <p>Incluye color, marca o detalles.</p>
-            </article>
+                    <input
+                        type="text"
+                        id="place">
 
-        </aside>
+                </div>
 
-    </section>
+                <div class="form-group">
 
-</main>
+                    <label for="date">
+                        Fecha
+                    </label>
+
+                    <input
+                        type="date"
+                        id="date">
+
+                </div>
+
+                <div class="form-group">
+
+                    <label for="contact">
+                        Contacto
+                    </label>
+
+                    <input
+                        type="text"
+                        id="contact">
+
+                </div>
+
+                <div class="form-group full">
+
+                    <label for="description">
+                        Descripción
+                    </label>
+
+                    <textarea id="description"></textarea>
+
+                </div>
+
+                <div class="form-group full">
+
+                    <label for="image">
+                        Fotografía
+                    </label>
+
+                    <input
+                        type="file"
+                        id="image">
+
+                </div>
+
+                <button
+                    type="submit"
+                    class="button primary">
+
+                    Publicar reporte
+
+                </button>
+
+                <p id="message"></p>
+
+            </form>
+
+            <aside class="report-tips">
+
+                <h2>Consejos</h2>
+
+                <article>
+                    <h3>Fotografía clara</h3>
+                    <p>Muestra el objeto completo.</p>
+                </article>
+
+                <article>
+                    <h3>Ubicación exacta</h3>
+                    <p>Indica el edificio o zona.</p>
+                </article>
+
+                <article>
+                    <h3>Descripción útil</h3>
+                    <p>Incluye color, marca o detalles.</p>
+                </article>
+
+            </aside>
+
+        </section>
+
+    </main>
 
     <footer>
-        <div class="footer-brand">
-            <img src="assets/images/logo.svg" alt="Lo encontre logo">
+
+        <div class="footer-top">
+
+            <a href="index.html" class="footer-brand">
+                <img src="assets/images/logo.svg" alt="Lo Encontré logo">
+            </a>
+
+            <p class="footer-tagline">
+                Reportá. Buscá. Recuperá.
+            </p>
+
         </div>
+
         <div class="footer-bottom">
-            <p>&copy; 2026 Lo Encontre. Todos los derechos reservados.</p>
+
+            <p>
+                &copy; 2026 Lo Encontré. Todos los derechos reservados.
+            </p>
+
+            <p class="footer-credit">
+                Hecho por
+                <a href="https://bushcoding.com/fredericjasmin" target="_blank">
+                    Frederic Jasmin
+                </a>
+                ·
+                <a href="mailto:frederic@bushcoding.com">
+                    frederic@bushcoding.com
+                </a>
+            </p>
+
         </div>
+
     </footer>
+
     <script src="js/script.js"></script>
+
 </body>
 
 </html>

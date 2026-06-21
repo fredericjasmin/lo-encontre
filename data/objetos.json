@@ -1,0 +1,102 @@
+[
+    {
+        "id": 1,
+        "nombre": "Audífonos Sony",
+        "categoria": "Electrónicos",
+        "estado": "Encontrado",
+        "lugar": "Laboratorio A",
+        "fecha": "2026-06-01",
+        "descripcion": "Audífonos inalámbricos negros encontrados cerca de una computadora.",
+        "imagen": "assets/images/objects/object-headphones.jpg"
+    },
+    {
+        "id": 2,
+        "nombre": "Cuaderno de Cálculo",
+        "categoria": "Académico",
+        "estado": "Perdido",
+        "lugar": "Aula 204",
+        "fecha": "2026-05-30",
+        "descripcion": "Cuaderno con apuntes y separadores de colores.",
+        "imagen": "assets/images/objects/object-notebook.jpg"
+    },
+    {
+        "id": 3,
+        "nombre": "Llaves de mucho tipo",
+        "categoria": "Llaves",
+        "estado": "Recuperado",
+        "lugar": "Cafetería",
+        "fecha": "2026-05-28",
+        "descripcion": "Recuperadas por seguridad del campus.",
+        "imagen": "assets/images/objects/object-keys.webp"
+    },
+    {
+        "id": 4,
+        "nombre": "Calculadora Casio",
+        "categoria": "Académico",
+        "estado": "Perdido",
+        "lugar": "Biblioteca",
+        "fecha": "2026-06-02",
+        "descripcion": "Calculadora científica color azul a gris.",
+        "imagen": "assets/images/objects/object-calculator.jpg"
+    },
+    {
+        "id": 5,
+        "nombre": "Botella térmica azul",
+        "categoria": "Accesorios",
+        "estado": "Encontrado",
+        "lugar": "Edificio B",
+        "fecha": "2026-06-03",
+        "descripcion": "Botella metálica con adhesivos.",
+        "imagen": "assets/images/objects/object-bottle.jpeg"
+    },
+    {
+        "id": 6,
+        "nombre": "USB Kingston",
+        "categoria": "Electrónicos",
+        "estado": "Encontrado",
+        "lugar": "Laboratorio Redes",
+        "fecha": "2026-06-04",
+        "descripcion": "Memoria USB color plateado.",
+        "imagen": "assets/images/objects/object-usb.jpg"
+    },
+    {
+        "id": 7,
+        "nombre": "Carné estudiantil",
+        "categoria": "Otros",
+        "estado": "Encontrado",
+        "lugar": "Parqueo",
+        "fecha": "2026-06-05",
+        "descripcion": "Carné encontrado cerca de la entrada principal.",
+        "imagen": "assets/images/objects/object-id.jpeg"
+    },
+    {
+        "id": 8,
+        "nombre": "Mouse Logitech",
+        "categoria": "Electrónicos",
+        "estado": "Perdido",
+        "lugar": "Laboratorio B",
+        "fecha": "2026-06-06",
+        "descripcion": "Mouse inalámbrico color negro.",
+        "imagen": "assets/images/objects/object-mouse.jpg"
+    },
+    {
+        "id": 9,
+        "nombre": "Mochila negra",
+        "categoria": "Accesorios",
+        "estado": "Encontrado",
+        "lugar": "Auditorio",
+        "fecha": "2026-06-07",
+        "descripcion": "Mochila con varios cuadernos en su interior.",
+        "imagen": "assets/images/objects/object-backpack.webp"
+    },
+    {
+        "id": 10,
+        "nombre": "Lentes graduados",
+        "categoria": "Accesorios",
+        "estado": "Perdido",
+        "lugar": "Cafetería",
+        "fecha": "2026-06-08",
+        "descripcion": "Lentes con marco negro.",
+        "imagen": "assets/images/objects/object-glasses.jpg"
+    }
+]
