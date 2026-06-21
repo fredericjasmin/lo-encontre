@@ -384,6 +384,7 @@ nav a:hover {
     from {
         opacity: 1;
     }
+
     to {
         opacity: 0;
     }
@@ -561,7 +562,7 @@ nav a:hover {
     position: absolute;
     top: 12px;
     right: 12px;
-    width: 30px ;
+    width: 30px;
     height: 30px;
     display: flex;
     align-items: center;
@@ -645,7 +646,7 @@ nav a:hover {
     max-width: 90vw;
     max-height: 80vh;
     border-radius: 4px;
-}    
+}
 
 .image-modal p {
     margin: 0;
@@ -810,6 +811,7 @@ footer {
 
     .hero-image {
         width: 100%;
+        aspect-ratio: 1.5 / 1;
         height: auto;
     }
 
@@ -847,6 +849,8 @@ footer {
 
     .about-image {
         width: 100%;
+        aspect-ratio: 1.5 / 1;
+        height: auto;
     }
 
     .game-scene-wrapper {
