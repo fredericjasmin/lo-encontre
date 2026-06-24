@@ -160,3 +160,5 @@ reportForm.addEventListener("submit", guardarReporte);
 clearFormButton.addEventListener("click", limpiarFormulario);
 
 actualizarVistaPrevia();
+document.getElementById('date').valueAsDate = new Date();
+actualizarVistaPrevia();
