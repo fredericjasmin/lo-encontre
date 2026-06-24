@@ -47,9 +47,7 @@
 
         <section class="report-layout">
 
-            <form
-                id="reportForm"
-                class="report-form">
+            <form id="reportForm" class="report-form">
 
                 <div class="form-group">
 
@@ -70,9 +68,7 @@
                         Nombre del objeto
                     </label>
 
-                    <input
-                        type="text"
-                        id="name">
+                    <input type="text" id="name">
 
                 </div>
 
@@ -98,9 +94,7 @@
                         Lugar
                     </label>
 
-                    <input
-                        type="text"
-                        id="place">
+                    <input type="text" id="place">
 
                 </div>
 
@@ -110,9 +104,7 @@
                         Fecha
                     </label>
 
-                    <input
-                        type="date"
-                        id="date">
+                    <input type="date" id="date">
 
                 </div>
 
@@ -122,9 +114,7 @@
                         Contacto
                     </label>
 
-                    <input
-                        type="text"
-                        id="contact">
+                    <input type="text" id="contact">
 
                 </div>
 
@@ -144,43 +134,56 @@
                         Fotografía
                     </label>
 
-                    <input
-                        type="file"
-                        id="image">
+                    <input type="file" id="image">
 
                 </div>
 
-                <button
-                    type="submit"
-                    class="button primary">
+                <div class="report-form-actions">
+                    <button type="button" id="clearForm" class="report-reset">
+                        Limpiar formulario
+                    </button>
 
-                    Publicar reporte
-
-                </button>
+                    <button type="submit" class="report-submit">
+                        Publicar reporte
+                    </button>
+                </div>
 
                 <p id="message"></p>
 
             </form>
 
-            <aside class="report-tips">
+            <aside class="report-preview">
+                <p class="preview-label">Vista previa</p>
 
-                <h2>Consejos</h2>
+                <article class="preview-card">
+                    <img id="previewImage" src="assets/images/objects/object-placeholder.png"
+                        alt="Vista previa del objeto">
 
-                <article>
-                    <h3>Fotografía clara</h3>
-                    <p>Muestra el objeto completo.</p>
+                    <div class="preview-content">
+                        <span id="previewStatus" class="object-status found">
+                            Encontrado
+                        </span>
+
+                        <h3 id="previewName">Nombre del objeto</h3>
+
+                        <p id="previewCategory" class="object-category">
+                            Categoría
+                        </p>
+
+                        <p id="previewDescription">
+                            La descripción del objeto aparecerá aquí.
+                        </p>
+
+                        <div class="object-meta">
+                            <span id="previewPlace">Lugar</span>
+                            <span id="previewDate">Fecha</span>
+                        </div>
+
+                        <p id="previewContact" class="preview-contact">
+                            Contacto: —
+                        </p>
+                    </div>
                 </article>
-
-                <article>
-                    <h3>Ubicación exacta</h3>
-                    <p>Indica el edificio o zona.</p>
-                </article>
-
-                <article>
-                    <h3>Descripción útil</h3>
-                    <p>Incluye color, marca o detalles.</p>
-                </article>
-
             </aside>
 
         </section>
@@ -222,7 +225,8 @@
 
     </footer>
 
-    <script src="js/script.js"></script>
+    <script src="js/menu.js"></script>
+    <script src="js/reportar.js"></script>
 
 </body>
 

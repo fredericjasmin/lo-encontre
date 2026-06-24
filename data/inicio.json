@@ -1,0 +1,20 @@
+{
+    "about": {
+        "titulo": "No todo lo que se pierde desaparece.",
+        "texto": "Lo Encontré ayuda principalmente a estudiantes que pierden o encuentran objetos dentro del campus. Permite publicar reportes y revisar los objetos registrados para facilitar su recuperación."
+    },
+    "pasos": [
+        {
+            "titulo": "1. Reporta",
+            "texto": "Si encontraste un objeto dentro del campus, publica una descripción y una fotografía."
+        },
+        {
+            "titulo": "2. Busca",
+            "texto": "Explora los reportes recientes para verificar si alguien encontró tu pertenencia."
+        },
+        {
+            "titulo": "3. Recupera",
+            "texto": "Contacta al responsable del reporte y coordina la entrega del objeto."
+        }
+    ]
+}

@@ -617,6 +617,13 @@ nav a:hover {
     margin: 0 0 8px;
 }
 
+.object-category {
+    margin: 0 0 10px;
+    color: var(--blue);
+    font-size: .85rem;
+    font-weight: 800;
+}
+
 .object-meta {
     display: flex;
     justify-content: space-between;
@@ -661,6 +668,10 @@ nav a:hover {
 }
 
 /* Reportar */
+.report-hero h1 {
+    margin-top: 40px;
+}
+
 .report-layout {
     display: flex;
     gap: 40px;
@@ -705,28 +716,135 @@ nav a:hover {
 
 .form-group textarea {
     min-height: 120px;
-    resize: vertical;
+    resize: none;
 }
 
-.report-form button {
-    width: 100%;
+.report-submit {
+    min-height: 54px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    border: 1px solid var(--green);
+    border-radius: 8px;
+    background: var(--green);
+    color: var(--white);
+    font: inherit;
+    font-weight: 800;
+    letter-spacing: .01em;
     cursor: pointer;
 }
 
-.report-tips {
+.report-form-actions {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 12px;
+}
+
+.report-reset {
+    min-height: 54px;
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    background: var(--white);
+    color: var(--muted);
+    font: inherit;
+    font-weight: 800;
+    cursor: pointer;
+}
+
+.report-reset:hover {
+    border-color: var(--ink);
+    color: var(--ink);
+}
+
+.report-preview {
     width: 30%;
-    padding: 28px;
+}
+
+.preview-label {
+    margin-top: 0;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: .08em;
+    font-size: .78rem;
+}
+
+.preview-card {
+    overflow: hidden;
     border: 1px solid var(--line);
     border-radius: 8px;
     background: rgba(255, 250, 242, .75);
+}
+
+.preview-card img {
+    display: block;
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+}
+
+.preview-content {
+    padding: 22px;
+}
+
+.preview-content h3 {
+    margin: 0 0 8px;
+}
+
+.preview-contact {
+    margin: 16px 0 0;
+    padding-top: 14px;
+    border-top: 1px solid var(--line);
+    font-size: .85rem;
+}
+
+.field-error {
+    margin: 0;
+    color: var(--coral);
+    font-size: .8rem;
+    font-weight: 700;
+}
+
+.form-group.has-error input,
+.form-group.has-error select,
+.form-group.has-error textarea {
+    border-color: var(--coral);
+}
+
+#message {
+    display: none;
+    width: 100%;
+    margin: 0;
+    padding: 16px 18px;
+    border: 1px solid var(--green);
+    border-radius: 8px;
+    background: rgba(31, 106, 77, .1);
+    color: var(--green);
+    font-weight: 800;
+}
+
+#message.show {
+    display: block;
+}
+
+#message.error {
+    border-color: var(--coral);
+    background: rgba(200, 79, 61, .1);
+    color: var(--coral);
+}
+
+#message a {
+    margin-left: 10px;
+    color: inherit;
+    text-underline-offset: 3px;
 }
 
 /* Footer */
 footer {
     max-width: 1180px;
     margin: 0 auto;
-    padding: 48px 16px 32px;
-    border-top: 1px solid var(--line);
+    padding: 0 16px 32px;
 }
 
 .footer-top {
@@ -735,7 +853,9 @@ footer {
     justify-content: space-between;
     flex-wrap: wrap;
     gap: 20px;
+    padding-top: 48px;
     padding-bottom: 32px;
+    border-top: 1px solid var(--line);
 }
 
 .footer-brand {
@@ -795,7 +915,7 @@ footer {
     }
 
     .report-form,
-    .report-tips {
+    .report-preview {
         width: 100%;
     }
 }
@@ -879,10 +999,48 @@ footer {
     .form-group {
         width: 100%;
     }
+
+    .report-form-actions {
+        grid-template-columns: 1fr;
+    }
 }
 
 @media (max-width: 370px) {
     .brand img {
         width: 170px;
     }
+}
+
+.object-actions {
+    display: flex;
+    gap: 8px;
+    margin-top: 18px;
+}
+
+.object-action {
+    flex: 1;
+    padding: 8px 10px;
+    border: 1px solid var(--ink);
+    border-radius: 6px;
+    background: var(--white);
+    color: var(--ink);
+    font: inherit;
+    font-size: .82rem;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.object-action:hover {
+    background: var(--ink);
+    color: var(--paper);
+}
+
+.delete-report {
+    border-color: var(--coral);
+    color: var(--coral);
+}
+
+.delete-report:hover {
+    background: var(--coral);
+    color: var(--white);
 }
