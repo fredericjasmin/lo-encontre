@@ -123,6 +123,12 @@ async function cargarObjetos() {
 
     objetos = [...jsonObjetos, ...reportes];
 
+    const total = document.querySelector("#objectsTotal");
+
+    if (total) {
+        total.textContent = `Hay ${objetos.length} objetos reportados en total.`;
+    }
+
     renderizarObjetos(objetos);
 }
 
@@ -246,7 +252,11 @@ function filtrarObjetos() {
                 coincideEstado
             );
         });
+    const total = document.querySelector("#objectsTotal");
 
+    if (total) {
+        total.textContent = `Mostrando ${resultado.length} de ${objetos.length} objetos.`;
+    }
     renderizarObjetos(resultado);
 }
 

@@ -249,6 +249,11 @@ nav a:hover {
     max-width: 520px;
 }
 
+.objects-total {
+    margin-top: 12px;
+    font-weight: 700;
+}
+
 /* About */
 .about {
     padding: 120px 0;
