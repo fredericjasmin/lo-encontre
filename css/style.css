@@ -723,6 +723,10 @@ nav a:hover {
 
 .form-group input[type="date"] {
     min-width: 0;
+    max-width: 100%;
+    width: 100%;
+    -webkit-appearance: none;
+    appearance: none;
 }
 
 .form-group textarea {
