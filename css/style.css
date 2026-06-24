@@ -721,6 +721,10 @@ nav a:hover {
     min-width: 0;
 }
 
+.form-group input[type="date"] {
+    min-width: 0;
+}
+
 .form-group textarea {
     min-height: 120px;
     resize: none;
