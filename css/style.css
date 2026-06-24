@@ -722,6 +722,7 @@ nav a:hover {
 }
 
 .form-group input[type="date"] {
+    text-align: left;
     min-width: 0;
     max-width: 100%;
     width: 100%;
