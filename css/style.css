@@ -722,12 +722,13 @@ nav a:hover {
 }
 
 .form-group input[type="date"] {
-    text-align: left;
     min-width: 0;
     max-width: 100%;
     width: 100%;
     -webkit-appearance: none;
     appearance: none;
+    text-align: left;
+    -webkit-text-align: left;
 }
 
 .form-group textarea {
