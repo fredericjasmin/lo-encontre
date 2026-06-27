@@ -344,10 +344,25 @@ nav a:hover {
     padding: 120px 0;
 }
 
-.game-target {
-    margin-bottom: 30px;
-    font-size: 1.2rem;
+.game-target-floating {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    background-color: rgba(22, 22, 22, 0.85);
+    color: var(--white);
+    padding: 8px 16px;
+    border-radius: 6px;
+    font-size: 0.95rem;
     font-weight: 700;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+    z-index: 10;
+    pointer-events: none;
+}
+
+.game-target-floating #target-name {
+    color: var(--gold);
+    text-transform: uppercase;
+    margin-left: 4px;
 }
 
 .game-scene-wrapper {
@@ -1019,6 +1034,24 @@ footer {
 
     .game-scene-wrapper {
         padding: 5px;
+        margin-top: 50px;
+    }
+
+    .game-target-floating {
+        position: absolute;
+        top: -45px;
+        left: 0;
+        transform: none;
+        background: none;
+        color: var(--ink);
+        box-shadow: none;
+        padding: 0;
+        font-size: 1.1rem;
+        width: max-content;
+    }
+
+    .game-target-floating #target-name {
+        color: var(--coral);
     }
 
     .cta-split {
