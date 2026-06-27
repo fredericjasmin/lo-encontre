@@ -131,10 +131,7 @@ function crearYGuardarObjeto(imagen) {
     reportes.push(nuevoReporte);
     localStorage.setItem("reportes", JSON.stringify(reportes));
 
-    message.innerHTML = `
-        ✓ Reporte publicado correctamente.
-        <a href="objetos.html">Ver objetos reportados →</a>
-    `;
+    message.innerHTML = `Reporte publicado correctamente.<a href="objetos.html">Ver objetos reportados</a>`;
     message.className = "show";
 
     reportForm.reset();
