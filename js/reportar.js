@@ -81,16 +81,7 @@ function actualizarVistaPrevia() {
         : "assets/images/objects/object-placeholder.png";
 }
 
-function convertirImagenABase64(archivo) {
-    return new Promise((resolve, reject) => {
-        const lector = new FileReader();
-        lector.onload = () => resolve(lector.result);
-        lector.onerror = reject;
-        lector.readAsDataURL(archivo);
-    });
-}
-
-async function guardarReporte(event) {
+function guardarReporte(event) {
     event.preventDefault();
 
     if (!validarFormulario()) {
@@ -100,10 +91,20 @@ async function guardarReporte(event) {
     }
 
     const archivoImagen = document.querySelector("#image").files[0];
-    const imagen = archivoImagen
-        ? await convertirImagenABase64(archivoImagen)
-        : "assets/images/objects/object-placeholder.png";
 
+    if (archivoImagen) {
+        const lector = new FileReader();
+        lector.onload = function() {
+            const imagenBase64 = lector.result;
+            crearYGuardarObjeto(imagenBase64);
+        };
+        lector.readAsDataURL(archivoImagen);
+    } else {
+        crearYGuardarObjeto("assets/images/objects/object-placeholder.png");
+    }
+}
+
+function crearYGuardarObjeto(imagen) {
     const nuevoReporte = {
         id: Date.now(),
         nombre: document.querySelector("#name").value.trim(),
@@ -115,7 +116,7 @@ async function guardarReporte(event) {
         fecha: document.querySelector("#date").value,
         contacto: document.querySelector("#contact").value.trim(),
         descripcion: document.querySelector("#description").value.trim(),
-        imagen
+        imagen: imagen
     };
 
     const reportes = JSON.parse(localStorage.getItem("reportes")) || [];

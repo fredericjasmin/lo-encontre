@@ -358,7 +358,6 @@ nav a:hover {
     border: 1px solid var(--line);
     border-radius: 4px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, .08);
-    transform: rotate(-1.2deg);
 }
 
 .game-scene {
@@ -548,6 +547,8 @@ nav a:hover {
     background-color: rgba(255, 250, 242, .75);
     border: 1px solid var(--line);
     border-radius: 8px;
+    display: flex;
+    flex-direction: column;
 }
 
 .object-image {
@@ -587,10 +588,14 @@ nav a:hover {
 
 .object-content {
     padding: 22px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
 }
 
 .object-status {
     display: inline-block;
+    align-self: flex-start;
     margin-bottom: 12px;
     padding: 5px 12px;
     border-radius: 999px;
@@ -631,6 +636,7 @@ nav a:hover {
     border-top: 1px solid var(--line);
     font-size: .85rem;
     color: var(--muted);
+    margin-top: auto;
 }
 
 /* Modales e imágenes expandidas */

@@ -24,15 +24,9 @@ function newGame() {
 
 function getClickPosition(event) {
     const rect = scene.getBoundingClientRect();
-    const centerX = rect.left + rect.width / 2;
-    const centerY = rect.top + rect.height / 2;
-    const dx = event.clientX - centerX;
-    const dy = event.clientY - centerY;
-    const angle = 1.2 * (Math.PI / 180);
-
     return {
-        x: scene.offsetWidth / 2 + dx * Math.cos(angle) - dy * Math.sin(angle),
-        y: scene.offsetHeight / 2 + dx * Math.sin(angle) + dy * Math.cos(angle)
+        x: event.clientX - rect.left,
+        y: event.clientY - rect.top
     };
 }
 
