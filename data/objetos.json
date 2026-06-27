@@ -7,7 +7,7 @@
         "lugar": "Laboratorio A",
         "fecha": "2026-06-01",
         "descripcion": "Audífonos inalámbricos negros encontrados cerca de una computadora.",
-        "imagen": "assets/images/objects/object-headphones.jpg"
+        "imagen": "assets/images/objects/object-headphones.webp"
     },
     {
         "id": 2,
@@ -17,7 +17,7 @@
         "lugar": "Aula 204",
         "fecha": "2026-05-30",
         "descripcion": "Cuaderno con apuntes y separadores de colores.",
-        "imagen": "assets/images/objects/object-notebook.jpg"
+        "imagen": "assets/images/objects/object-notebook.webp"
     },
     {
         "id": 3,
@@ -37,7 +37,7 @@
         "lugar": "Biblioteca",
         "fecha": "2026-06-02",
         "descripcion": "Calculadora científica color azul a gris.",
-        "imagen": "assets/images/objects/object-calculator.jpg"
+        "imagen": "assets/images/objects/object-calculator.webp"
     },
     {
         "id": 5,
@@ -47,7 +47,7 @@
         "lugar": "Edificio B",
         "fecha": "2026-06-03",
         "descripcion": "Botella metálica con adhesivos.",
-        "imagen": "assets/images/objects/object-bottle.jpeg"
+        "imagen": "assets/images/objects/object-bottle.webp"
     },
     {
         "id": 6,
@@ -57,7 +57,7 @@
         "lugar": "Laboratorio Redes",
         "fecha": "2026-06-04",
         "descripcion": "Memoria USB color plateado.",
-        "imagen": "assets/images/objects/object-usb.jpg"
+        "imagen": "assets/images/objects/object-usb.webp"
     },
     {
         "id": 7,
@@ -67,7 +67,7 @@
         "lugar": "Parqueo",
         "fecha": "2026-06-05",
         "descripcion": "Carné encontrado cerca de la entrada principal.",
-        "imagen": "assets/images/objects/object-id.jpeg"
+        "imagen": "assets/images/objects/object-id.webp"
     },
     {
         "id": 8,
@@ -77,7 +77,7 @@
         "lugar": "Laboratorio B",
         "fecha": "2026-06-06",
         "descripcion": "Mouse inalámbrico color negro.",
-        "imagen": "assets/images/objects/object-mouse.jpg"
+        "imagen": "assets/images/objects/object-mouse.webp"
     },
     {
         "id": 9,
@@ -97,6 +97,6 @@
         "lugar": "Cafetería",
         "fecha": "2026-06-08",
         "descripcion": "Lentes con marco negro.",
-        "imagen": "assets/images/objects/object-glasses.jpg"
+        "imagen": "assets/images/objects/object-glasses.webp"
     }
 ]

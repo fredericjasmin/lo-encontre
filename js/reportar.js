@@ -8,6 +8,14 @@ const fields = [
     document.querySelector("#contact"),
     document.querySelector("#description")
 ];
+const counters = document.querySelectorAll(".char-counter");
+
+function actualizarContadores() {
+    counters.forEach(contador => {
+        const campo = document.querySelector(`#${contador.dataset.field}`);
+        contador.textContent = `${campo.value.length}/${campo.maxLength}`;
+    });
+}
 
 function obtenerMensajeError(campo) {
     const valor = campo.value.trim();
@@ -130,6 +138,7 @@ function crearYGuardarObjeto(imagen) {
     message.className = "show";
 
     reportForm.reset();
+    actualizarContadores();
     actualizarVistaPrevia();
 }
 
@@ -143,6 +152,7 @@ function limpiarFormulario() {
     });
 
     message.className = "";
+    actualizarContadores();
     actualizarVistaPrevia();
 }
 
@@ -156,10 +166,12 @@ fields.forEach(campo => {
 });
 
 reportForm.addEventListener("input", actualizarVistaPrevia);
+reportForm.addEventListener("input", actualizarContadores);
 reportForm.addEventListener("change", actualizarVistaPrevia);
 reportForm.addEventListener("submit", guardarReporte);
 clearFormButton.addEventListener("click", limpiarFormulario);
 
 actualizarVistaPrevia();
+actualizarContadores();
 document.getElementById('date').valueAsDate = new Date();
 actualizarVistaPrevia();

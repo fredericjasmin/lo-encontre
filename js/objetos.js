@@ -47,7 +47,7 @@ function renderizarObjetos(lista) {
             <div class="object-actions">
                 ${objeto.estado !== "Recuperado" ? `
                     <button class="object-action recover-report" data-id="${objeto.id}">
-                        Recuperar
+                        Recuperado
                     </button>
                 ` : ""}
                 <button class="object-action delete-report" data-id="${objeto.id}">

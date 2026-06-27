@@ -606,6 +606,7 @@ nav a:hover {
     display: flex;
     flex-direction: column;
     flex-grow: 1;
+    min-width: 0;
 }
 
 .object-status {
@@ -637,6 +638,13 @@ nav a:hover {
     margin: 0 0 8px;
 }
 
+.object-content h3,
+.object-content p,
+.preview-content h3,
+.preview-content p {
+    overflow-wrap: anywhere;
+}
+
 .object-category {
     margin: 0 0 10px;
     color: var(--blue);
@@ -646,12 +654,18 @@ nav a:hover {
 
 .object-meta {
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
+    gap: 8px;
     padding-top: 14px;
     border-top: 1px solid var(--line);
     font-size: .85rem;
     color: var(--muted);
     margin-top: auto;
+}
+
+.object-meta span {
+    overflow-wrap: anywhere;
 }
 
 /* Modales e imágenes expandidas */
@@ -722,6 +736,12 @@ nav a:hover {
 .form-group label {
     font-weight: 700;
     font-size: .92rem;
+}
+
+.char-counter {
+    color: var(--muted);
+    font-size: .82rem;
+    text-align: right;
 }
 
 .form-group input,
