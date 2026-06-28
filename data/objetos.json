@@ -7,7 +7,8 @@
         "lugar": "Laboratorio A",
         "fecha": "2026-06-01",
         "descripcion": "Audífonos inalámbricos negros encontrados cerca de una computadora.",
-        "imagen": "assets/images/objects/object-headphones.webp"
+        "imagen": "assets/images/objects/object-headphones.webp",
+        "contacto": "8845-1234 (Mariela)"
     },
     {
         "id": 2,
@@ -17,7 +18,8 @@
         "lugar": "Aula 204",
         "fecha": "2026-05-30",
         "descripcion": "Cuaderno con apuntes y separadores de colores.",
-        "imagen": "assets/images/objects/object-notebook.webp"
+        "imagen": "assets/images/objects/object-notebook.webp",
+        "contacto": "sofia.castro@estudiante.cr"
     },
     {
         "id": 3,
@@ -27,7 +29,8 @@
         "lugar": "Cafetería",
         "fecha": "2026-05-28",
         "descripcion": "Recuperadas por seguridad del campus.",
-        "imagen": "assets/images/objects/object-keys.webp"
+        "imagen": "assets/images/objects/object-keys.webp",
+        "contacto": "7098-5678 (Esteban)"
     },
     {
         "id": 4,
@@ -37,7 +40,8 @@
         "lugar": "Biblioteca",
         "fecha": "2026-06-02",
         "descripcion": "Calculadora científica color azul a gris.",
-        "imagen": "assets/images/objects/object-calculator.webp"
+        "imagen": "assets/images/objects/object-calculator.webp",
+        "contacto": "juan.perez@estudiantec.cr"
     },
     {
         "id": 5,
@@ -47,7 +51,8 @@
         "lugar": "Edificio B",
         "fecha": "2026-06-03",
         "descripcion": "Botella metálica con adhesivos.",
-        "imagen": "assets/images/objects/object-bottle.webp"
+        "imagen": "assets/images/objects/object-bottle.webp",
+        "contacto": "8344-9012 (Lucía)"
     },
     {
         "id": 6,
@@ -57,7 +62,8 @@
         "lugar": "Laboratorio Redes",
         "fecha": "2026-06-04",
         "descripcion": "Memoria USB color plateado.",
-        "imagen": "assets/images/objects/object-usb.webp"
+        "imagen": "assets/images/objects/object-usb.webp",
+        "contacto": "valeria.mora@gmail.com"
     },
     {
         "id": 7,
@@ -67,7 +73,8 @@
         "lugar": "Parqueo",
         "fecha": "2026-06-05",
         "descripcion": "Carné encontrado cerca de la entrada principal.",
-        "imagen": "assets/images/objects/object-id.webp"
+        "imagen": "assets/images/objects/object-id.webp",
+        "contacto": "6015-7890 (Felipe)"
     },
     {
         "id": 8,
@@ -77,7 +84,8 @@
         "lugar": "Laboratorio B",
         "fecha": "2026-06-06",
         "descripcion": "Mouse inalámbrico color negro.",
-        "imagen": "assets/images/objects/object-mouse.webp"
+        "imagen": "assets/images/objects/object-mouse.webp",
+        "contacto": "pedro.rojas@estudiante.cr"
     },
     {
         "id": 9,
@@ -87,7 +95,8 @@
         "lugar": "Auditorio",
         "fecha": "2026-06-07",
         "descripcion": "Mochila con varios cuadernos en su interior.",
-        "imagen": "assets/images/objects/object-backpack.webp"
+        "imagen": "assets/images/objects/object-backpack.webp",
+        "contacto": "7102-4567 (Daniela)"
     },
     {
         "id": 10,
@@ -97,6 +106,7 @@
         "lugar": "Cafetería",
         "fecha": "2026-06-08",
         "descripcion": "Lentes con marco negro.",
-        "imagen": "assets/images/objects/object-glasses.webp"
+        "imagen": "assets/images/objects/object-glasses.webp",
+        "contacto": "daniela.vega@gmail.com"
     }
 ]

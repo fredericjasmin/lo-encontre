@@ -644,6 +644,13 @@ nav a:hover {
     font-weight: 800;
 }
 
+.object-contact {
+    font-size: .88rem;
+    color: var(--muted);
+    margin-top: 8px;
+    margin-bottom: 12px;
+}
+
 .object-meta {
     display: flex;
     flex-wrap: wrap;

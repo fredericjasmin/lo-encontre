@@ -74,6 +74,7 @@ function renderizarObjetos(lista) {
                     <h3>${objeto.nombre}</h3>
                     <p class="object-category">Categoría: ${objeto.categoria}</p>
                     <p>${objeto.descripcion}</p>
+                    <p class="object-contact"><strong>Contacto:</strong> ${objeto.contacto || "No especificado"}</p>
                     <div class="object-meta">
                         <span>${objeto.lugar}</span>
                         <span>${objeto.fecha}</span>
